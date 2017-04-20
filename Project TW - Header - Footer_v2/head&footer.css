@@ -1,0 +1,171 @@
+html {
+	background-image: url("http://st.gde-fon.com/wallpapers_original/570027_ogni_svet_kosmos_afrika_panorama_karta_snimok_evro_1920x1080_www.Gde-Fon.com.jpg");
+}
+
+main {
+	background-color: white;
+}
+
+header {
+    top:0;
+	left: 0;
+	width: 100%;
+    overflow: hidden;
+    background-color: #222222;
+}
+
+.logo-header {
+	position: relative;
+	vertical-align: middle;
+	left: 100px;
+	top: 8px;
+	height: 50px;
+	float:left;
+}
+
+.header-title {
+	font-family: 'Lato', sans-serif;
+	color : #FE9C45;
+	padding-left : 150px;
+	float:left;
+	padding-right: 50px;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu-list {
+	list-style-type:none;
+	display: inline-block;
+	margin:0;
+	padding:0;
+}
+
+.nav-items {
+	display:inline-block;
+	float: left;
+	margin-right: 1px;
+}
+
+.nav-items a {
+	display:block;
+	min-width:140px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-family: 'Lato', sans-serif;
+	color: #FE9C45;
+	background: #222222;
+	text-decoration: none;
+}
+
+.nav-items:hover a {
+	background: #E3D0B9;
+}
+
+.nav-items:hover .menu-list a {
+	background: #f3f3f3;
+	color: #222222;
+	height: 40px;
+	line-height: 40px;
+}
+
+.nav-items:hover .menu-list a:hover {
+	background: #FE9C45;
+	color: #fff;
+}
+
+.nav-items .menu-list {
+	display: none;
+}
+
+.nav-items .menu-list .nav-items {
+	display: block;
+	float: none;
+}
+
+.nav-items .menu-list .nav-items a {
+	width: auto;
+	min-width: 100px;
+	padding: 0 20px;
+}
+
+.menu-list .nav-items a:hover + .hidden, .hidden:hover {
+	display: block;
+}
+
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #FE9C45;
+	background: #222222;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+input[type=checkbox]{
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+@media screen and (max-width : 870px){
+	.menu {
+		position: static;
+		display: none;
+	}
+	
+	.nav-items {
+		margin-bottom: 1px;
+	}
+	
+	.menu-list .nav-items, .nav-items a {
+		width: 100%;
+	}
+	
+	.show-menu {
+		display:block;
+	}
+}
+
+
+.img-size {
+	width:450px;
+}
+
+.footer {
+	float: right;
+	width: 100%;
+    overflow: hidden;
+    background-color: #222222;
+}
+
+.logo-footer {
+	
+	vertical-align: middle;
+	top:15px;
+	left: 40px;
+	height: 100px;
+	float:left;
+}
+
+.footer-details {
+	padding-top: 50px;
+	padding-left: 25px;
+	font-family: 'Lato', sans-serif;
+	color : #FE9C45;
+}
+
+img {
+	user-drag: none; 
+    user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
