@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CriC</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+<div class="header title-bar" role="banner">
+CriC - Person finder
+</div>
+<div id="sidebar">
+	<ul>
+		<li><img src="logo.png" width=120 height=120></li>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="#">Other</a></li>
+	</ul>
+	<div id="sidebar-btn">
+		<span></span>
+		<span></span>
+		<span></span>		
+	</div>
+
+</div>
+
+
+<div class="story">
+	<div class="story-section">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="separated-81x80.png" width="81" height="80">
+					</td>
+					<td>
+						<img src="search-100x80.png" width="100" height="80">
+					</td>
+				</tr>
+				<tr class="captions">
+					<td>A crisis strikes and people get separated.</td>
+					<td>They let the world know they are looking for someone.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="story-section">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="post-90x80.png" width="90" height="80">
+					</td>
+					<td>
+						<img src="find-80x80.png" width="80" height="80">
+					</td>
+				</tr>
+				<tr class="captions">
+					<td>Individuals and organizations provide information.</td>
+					<td>People find information about their friends and family.</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+	</div>
+
+	<div class="teasers">
+	<div class="teasers-section">
+		<h2>Responders</h2>
+		"
+
+     		 You can help people find each other in the aftermath of a disaster:
+		"
+		<ul>
+			<li>Complete the <a href="form.html">form</a> if you have information!</li>
+		</ul>	
+	</div>
+
+	<div class="teasers-section">
+		<h2>Bla bla bla</h2>
+		<li>We help people!</li>
+		<li>Help us!!</li>
+	</div>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<footer>
+		<div class="footer">
+			<img class="logo-footer" src="logo.png" alt="Cric">
+			<p class="footer-details"> Crisis Containment Service si contributii individuale. Design & tehnologie cu pasiune de la MTLA</p>
+		</div>
+	</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$('#sidebar-btn').click(function(){
+				$('#sidebar').toggleClass('visible');
+		});
+	});
+</script>
+
+</body>
+</html>
