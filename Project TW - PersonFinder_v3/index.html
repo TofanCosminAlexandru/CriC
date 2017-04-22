@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CriC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+ 
+  <link rel="stylesheet" href="./styles/head&footer.css">
+
+ 
+</head>
+
+
+<body>
+
+
+ <header>
+    <img class="logo-header" src="./images/text_logo.png" alt="Cric">
+    <h3 class="header-title" >Crisis Containment Service</h3>
+  </header>
+  
+  <label for="show-menu" class="show-menu">Meniu</label>
+  <input type="checkbox" id="show-menu" role="button">
+  <div class="menu" id="menu">
+  <ul class="menu-list">
+    <li class="nav-items"><a href="index.html">Home</a></li>
+    <li class="nav-items"><a href="map.html">Map</a></li>
+    <li class="nav-items"><a href="index.html">Person Finder</a></li>
+    <li class="nav-items"><a href="fushion-tables.html">Fushion Tables</a></li>
+    <li class="nav-items"><a href="cap.html">Transmit Alerts</a></li>
+    <li class="nav-items"><button id="login-button" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Login</button></li>
+  </ul>
+  </div>
+  
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Logare</h4>
+          <h5 class="modal-title">Logare permisa doar persoanelor autorizate din cadrul Cric.</h5>
+        </div>
+        <div class="modal-body">
+          <form action="login.php" method="post">
+              <div class="input-group">
+             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+             <input id="email" type="text" class="form-control" name="user" size="50" placeholder="Email">
+          </div>
+
+           <div class="input-group">
+           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+           <input id="password" type="password" class="form-control" name="pass" placeholder="Password">
+          </div>
+          <br>
+          <input type="submit" class="btn btn-info" name="submit" value="Login">
+          
+          
+        </form>
+        <br>
+         <form action="logout.php" method="post">
+            <input type="submit" class="btn btn-info" name="submit" value="Logout">
+         </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  </div>
+  </div>
+
+
+<div id="sidebar">
+  <ul>
+    <li><img src="./images/logo.png" width=120 height=120></li>
+    <li><a href="index.html">Test</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#">Other</a></li>
+    <li><a href="#">Tables</a></li>
+
+  </ul>
+  <div id="sidebar-btn">
+    <span></span>
+    <span></span>
+    <span></span>   
+  </div>
+
+</div>
+
+	<div class="container">
+  <br>
+  <br>
+	<div class="page-header">
+	<h4>  Person Finder helps people reconnect with friends and loved ones in the aftermath of natural and humanitarian disasters. </h4>
+	</div>
+
+	<div class="jumbotron">
+
+	<p>Serviciul Person Finder serveste la a gasi o anumita persoana pierduta (inconstienta sau ranita) in urma dezastrului.
+			   Poate fi folosit de catre dumneavostra prin introducerea unor date despre persoana aflata in stare de urgenta (telefon, locatie 
+			   aproximativa, etc.), dupa care echipajele Cric se pun in actiunea de cautare imediat, cat si de autoritati pe baza 
+			   informatiilor detinute de persoane care nu au acces la Internet.</p>
+		
+	</div>
+
+
+
+  <div class= "row">
+  <div class="action-outer start">
+  <div class="action-inner">
+  	<a href="search.html"> I'm looking for someone</a>
+  </div>
+  </div>
+  <div class="action-outer end">
+  <div class="action-inner">
+  	<a href="form.html"> I have information about someone </a>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $('#sidebar-btn').click(function(){
+        $('#sidebar').toggleClass('visible');
+    });
+  });
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
