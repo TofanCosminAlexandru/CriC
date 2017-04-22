@@ -1,0 +1,224 @@
+html {
+	background: url(images/background2.jpg) no-repeat fixed;
+}
+
+body{
+    background: url(images/background2.jpg) no-repeat fixed;
+	font-family: Lato, sans-serif;
+}
+
+header {
+    top: 0;
+	left: 0;
+	width: 100%;
+    overflow: hidden;
+    background-color: #222222;
+}
+.logo-header {
+	position: absolute;
+	top: -1%;
+	z-index: 2;
+}
+.header-title {
+	font-family: 'Lato', sans-serif;
+	color: #FE9C45;
+	padding-left: 15%;
+	float: left;
+	padding-right: 50px;
+}
+.menu {
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+.menu-list {
+	list-style-type: none;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+.nav-items {
+	display: inline-block;
+	float: left;
+}
+.nav-items a {
+	display: block;
+	min-width: 140px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-family: 'Lato', sans-serif;
+	color: #FE9C45;
+	background: #222222;
+	text-decoration: none;
+}
+.btn {
+	text-decoration: none;
+	padding: 0;
+}
+#logout-button {
+	vertical-align: middle;
+	border-radius: 0px;
+	border: none; 
+	display: block;
+	min-width: 140px;
+	height: 50px;
+	line-height: 50px;
+	font-family: 'Lato', sans-serif;
+	color: #FE9C45;
+	background: #222222;
+	
+}
+.nav-items:hover a {
+	background: #E3D0B9;
+}
+ .nav-items:hover .menu-list a {
+	background: #f3f3f3;
+	color: #222222;
+	height: 40px;
+	line-height: 40px;
+}
+#logout-button, .nav-items:hover .menu-list a:hover {
+	background: #FE9C45;
+	color: #fff;
+}
+.nav-items .menu-list {
+	display: none;
+}
+.nav-items .menu-list .nav-items {
+	display: block;
+	float: none;
+}
+.nav-items .menu-list .nav-items a {
+	width: auto;
+	min-width: 100px;
+	padding: 0 20px;
+}
+.menu-list .nav-items a:hover + .hidden, .hidden:hover {
+	display: block;
+}
+.show-menu {
+	font-family: 'Lato', sans-serif;
+	text-decoration: none;
+	color: #FE9C45;
+	background: #222222;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+input[type=checkbox]{
+    display: none;
+    -webkit-appearance: none;
+}
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+@media screen and (max-width : 870px){
+	.menu {
+		position: static;
+		display: none;
+	}
+	.menu-list .nav-items, .nav-items .edit-data, .nav-items .change-picture, .nav-items a {
+		width: 100%;
+	}
+	#logout-button {
+		width: 100%;
+	}
+	.show-menu {
+		display: block;
+	}
+}
+
+
+.left-panel {
+	float: left;
+	width: 13%;
+	height: 457px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	background: #222222;
+	margin-top: 5%;
+	font-family: Lato, sans-serif;
+	color: #FE9C45;
+	display: table; 
+	text-align: center;
+}
+.profile_image {
+	height: 150px;
+	width: 150px;
+	border-radius: 150px;
+	margin-bottom: 5px;
+}
+.left-panel img {
+	padding-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.right-panel {
+	float:right;
+	margin-right: 5px;
+	width: 86%;
+	height: 35%;
+	margin-bottom: 5px;
+	background: #222222;
+	margin-top: 5%;
+	font-family: Lato, sans-serif;
+	font-weight: bold;
+	color: #FE9C45;
+	display: table; 
+	text-align: center;
+}
+.edit-data, .change-picture {
+	display: block;
+	font-family: Lato, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	height: 50px;
+	background-color: #222222;
+	color: rgba(254, 156, 69, 1);
+	margin-bottom: 2%;
+}
+.edit-data {
+	width: 120px;
+	min-width: 80px;
+}
+.change-picture {
+	width: 200px;
+	min-width: 80px;
+}
+.edit-data:hover, .edit-data:focus, .edit-data:active, .change-picture:hover, .change-picture:focus, .change-picture:active {
+	background-color: rgba(227, 208, 185, 1);
+	color: rgba(254, 156, 69, 1);
+}
+
+
+.footer {
+	float: right;
+	width: 100%;
+    overflow: hidden;
+    background-color: #222222;
+}
+.logo-footer {
+	
+	vertical-align: middle;
+	top: 15px;
+	left: 40px;
+	height: 100px;
+	float: left;
+}
+.footer-details {
+	padding-top: 50px;
+	padding-left: 25px;
+	font-family: 'Lato', sans-serif;
+	color : #FE9C45;
+}
+img {
+	user-drag: none; 
+    user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}

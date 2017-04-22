@@ -1,0 +1,61 @@
+html {
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+				url(images/white.jpg);
+}
+
+.table {
+	overflow-x: auto;
+	background-color: rgba(210,130,240, 0.3) !important;
+}
+table {
+	border-collapse: collapse;
+	border: 3px solid rgb(200, 200, 200);
+	letter-spacing: 1px;
+	width: 100%;
+}
+td, th {
+	border: 2px solid rgb(200, 200, 200);
+	padding: 7px 15px;
+}
+thead tr:nth-child(1) th {
+	text-align: center;
+	font-size: 2rem;
+}
+thead tr:nth-child(2) th {
+	text-align: center;
+	font-size: 1.2rem;
+}
+tfoot tr td {
+	padding: 15px 1px 15px 1px;
+}
+th {
+	background-color: rgba(235, 235, 235, 0.9);
+}
+td {
+	text-align: center;
+}
+tbody tr:nth-child(even) td {
+	background-color: rgba(250, 250, 250, 0.9);
+}
+tbody tr:nth-child(odd) td {
+	background-color: rgba(245, 245, 245, 0.9);
+}
+tbody {
+	font-size: 1.2rem;
+	font-style: italic;
+}
+tfoot tr:nth-child(1) {
+	background-color: rgba(235, 235, 235, 0.9);
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+tfoot tr:nth-child(2) td {
+	background-color: rgba(234, 234, 234, 0.5);
+	font-size: 1rem;
+	font-weight: normal;
+	text-align: left;
+	padding: 7px 1px 7px 1px;
+}
+.cutremur tr:nth-child(1) th {
+	background-color: rgba(193, 193, 193, 0.9);
+}
