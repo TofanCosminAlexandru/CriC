@@ -1,0 +1,90 @@
+.jumbotron{
+	background-color: #2E2D88;
+	color: white;
+}
+
+/*body {
+  background: #d6d6c2;
+}
+*/
+.container .action-outer.start {
+  background: #4285f4;
+  float: left;
+  margin-right: 18px;
+}
+
+.container .action-outer.end {
+  background: #15a04a;
+  float: left;
+}
+
+.container .row {
+  //margin: 80px;
+}
+
+.container{
+  margin-left: 100px;
+  margin-right:100px; 
+  height: 100%;
+ //background: #ffffff;
+}
+
+.page-header{
+  color: white;
+}
+
+.container .action-inner {
+  width: 240px;
+  height: 80px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+
+
+.container .action-outer {
+  border: none;
+  font-size: 20px;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  max-width: 240px;
+  min-height: 70px;
+  padding: 16px;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.container .action-outer a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dadada;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.26);
+  padding: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 3px;
+}
+
+.card .value {
+  display: block;  /* to make float/width attribute work */
+  float: right;
+  width: 50%;
+}
+
+.card a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
