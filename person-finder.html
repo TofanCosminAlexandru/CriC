@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+    <title>Crisis Containment Service</title>
+    
+    <meta name="author" content="Mihalachi Bogdan-Marian, Tofan Cosmin-Alexandru, Leleu Alexandru-Ioan, Alexandru Gabriel">
+    <meta name="description" content="Cric(Crisis Containment Service) este o platforma web ce permite gestionarea situatiilor de urgenta,
+									  oferind informatii utile despre evenimentele petrecute, zonele afectate si eventuale persoane disparute.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/head&footer.css">
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+ 
+</head>
+
+
+<body>
+
+
+ <header>
+    <img class="logo-header" src="./images/text_logo.png" alt="Cric">
+    <h3 class="header-title" >Crisis Containment Service</h3>
+  </header>
+  
+  <label for="show-menu" class="show-menu">Meniu</label>
+	<input type="checkbox" id="show-menu" role="button">
+	<div class="menu" id="menu">
+	<ul class="menu-list">
+		<li class="nav-items"><a href="index.php">Home</a></li>
+		<li class="nav-items"><a href="map.html">Map</a></li>
+		<li class="nav-items"><a href="person-finder.html">Person Finder</a></li>
+		<li class="nav-items"><a href="fushion-tables.html">Fushion Tables</a></li>
+		<li class="nav-items"> <a href="contact.html">Contact</a> </li>
+		<li class="nav-items"> <button id="login-button" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1">Login</button> </li>
+		<li class="nav-items"> <button id="register-button" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2">Register</button> </li>
+	</ul>
+	</div>
+  
+		<div class="modal fade" id="myModal1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content modal1">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Login</h4>
+				</div>
+				
+				<div class="modal-body">
+					<form>
+						<p>Logare permisa doar persoanelor autorizate din cadrul Cric.</p>
+						<p>
+							<label for="email">Email: </label>
+							<input type="email" id="email" name="type_email">
+						</p>
+						
+						<p>
+							<label for="password">Password: </label>
+							<input type="password" id="password" name="type_password">
+						</p>
+						<a href="home_on.html" class="btn btn-info" role="button">Log in</a>
+						<!--<button type="submit" class="btn btn-default">Log in</button>-->
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content modal2">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Create Account</h4>
+				</div>
+				
+				<div class="modal-body">
+					<form>
+						<p style="text-indent: 15px;">Crearea de cont este permisa doar persoanelor posesoare a unui cod oferit de o autoritate Cric.</p>
+						<p>
+							<label for="code">Cod Cric: </label>
+							<input type="password" id="code" name="type_code">
+						</p>
+						<p>
+							<label for="last_name">Nume de familie: </label>
+							<input type="text" id="last_name" name="type_last_name">
+						</p>
+						<p>
+							<label for="first_name">Prenume: </label>
+							<input type="text" id="first_name" name="type_first_name">
+						</p>
+						<p>
+							<label for="date_of_birth">Data de nastere: </label>
+							<input type="date" id="date_of_birth" name="type_date_of_birth">
+						</p>
+						<p>
+							<label for="email">Email: </label>
+							<input type="email" id="email" name="type_email">
+						</p>
+						<p>
+							<label for="country">Tara: </label>
+							<input type="text" id="country" name="type_country">
+						</p>
+						<p>
+							<label for="city">Oras: </label>
+							<input type="text" id="city" name="type_city">
+						</p>
+						<p class="short_description">
+							<label for="hobbies">Hobby-uri(sau scurta descriere): </label>
+							<textarea cols="30" rows="5" wrap="soft" maxlength="200" id="hobbies" name="type_hobbies"></textarea>
+						</p>
+						<p>
+							<label for="phone">Numar de telefon: </label>
+							<input type="tel" id="phone" name="type_phone">
+						</p>
+						<p>
+							<label for="password">Parola: </label>
+							<input type="password" id="password" name="type_password">
+						</p>
+						<p>
+							<label for="confirmed_password">Confirmare parola: </label>
+							<input type="password" id="confirmed_password" name="type_confirmed_password">
+						</p>
+						<button type="submit" class="btn btn-default">Create account</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div id="sidebar">
+  <ul>
+    <li><img src="./images/logo.png" width=120 height=120></li>
+    <li><a href="person-finder.html">Test</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#">Other</a></li>
+    <li><a href="#">Tables</a></li>
+
+  </ul>
+  <div id="sidebar-btn">
+    <span></span>
+    <span></span>
+    <span></span>   
+  </div>
+
+</div>
+
+	<div class="container">
+  <br>
+  <br>
+	<div class="page-header">
+	<h4>  Person Finder helps people reconnect with friends and loved ones in the aftermath of natural and humanitarian disasters. </h4>
+	</div>
+
+	<div class="jumbotron">
+
+	<p>Serviciul Person Finder serveste la a gasi o anumita persoana pierduta (inconstienta sau ranita) in urma dezastrului.
+			   Poate fi folosit de catre dumneavostra prin introducerea unor date despre persoana aflata in stare de urgenta (telefon, locatie 
+			   aproximativa, etc.), dupa care echipajele Cric se pun in actiunea de cautare imediat, cat si de autoritati pe baza 
+			   informatiilor detinute de persoane care nu au acces la Internet.</p>
+		
+	</div>
+
+
+
+  <div class= "row">
+  <div class="action-outer start">
+  <div class="action-inner">
+  	<a href="search.html"> I'm looking for someone</a>
+  </div>
+  </div>
+  <div class="action-outer end">
+  <div class="action-inner">
+  	<a href="form.html"> I have information about someone </a>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $('#sidebar-btn').click(function(){
+        $('#sidebar').toggleClass('visible');
+    });
+  });
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

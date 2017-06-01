@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CriC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles_on/main.css" />
+ 
+  <style>
+    body{
+        background: #d6d6c2;
+    }
+
+    input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+  </style>
+</head>
+
+<body>
+
+
+ <div class="card">
+
+    <div class="page-header">
+    <h3 style="color:#4285f4;">I'm looking for someone </h3>
+    </div>
+
+    <form>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+    <input type="text" name="search" placeholder="Search..">
+    </div>
+    </form>
+
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary btn-lg">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <a href="form.html">Create a new record</a>
+    </button>
+     
+
+ </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
