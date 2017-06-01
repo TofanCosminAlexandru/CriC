@@ -1,8 +1,8 @@
 <?php
 	$dbtype	= 'oracle';	
 	$dbhost	= 'localhost';
-	$dbuser	= 'alexjava';
-	$dbpass	= 'sql';
+	$dbuser	= 'FACULTATE';
+	$dbpass	= 'STUDENT';
 	$dbpath = ''; //this is for sqlite;
 
 	switch($dbtype){
