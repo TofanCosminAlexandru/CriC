@@ -1,2 +1,0 @@
-# CriC
-Crisis Containment Service
