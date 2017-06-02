@@ -131,19 +131,19 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 
-#myModal .modal-add {
+#myModal .modal-add, #myModal2 .modal-add {
 	background: rgba(30, 30, 30, 1);
 	font-family: Lato, sans-serif;
 	color: rgba(228, 228, 228, 1);
 }
-#myModal .modal-add h4 {
+#myModal .modal-add h4, #myModal2 .modal-add h4 {
 	text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
 }
-#myModal .modal-add  input, #myModal .modal-add textarea, #myModal .modal-add select {
+#myModal .modal-add  input, #myModal .modal-add textarea, #myModal .modal-add select, #myModal2 .modal-add  input, #myModal2 .modal-add textarea, #myModal2 .modal-add select {
 	background: rgba(30, 30, 30, 1);
 	border: 1px solid rgba(255, 255, 255, 0.5);
 }
-#myModal .modal-add button {
+#myModal .modal-add button, #myModal2 .modal-add button {
 	font-family: Lato, sans-serif;
 	color: rgba(228, 228, 228, 1);
 	background: rgba(30, 30, 30, 1);
@@ -151,7 +151,7 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 
-.add-event {
+.add-event, .show-info, .update-info {
 	font-family: Lato, sans-serif;
 	font-size: 20px;
 	text-align: center;
@@ -160,10 +160,20 @@ input[type=checkbox]:checked ~ #menu{
 	height: 50px;
 	background-color: #222222;
 	color: rgba(254, 156, 69, 1);
-	margin-left: 45%;
 	margin-bottom: 2%;
 }
-.add-event:hover, .add-event:focus, add-event:active {
+.show-info {
+	margin-left: 35%;
+}
+.add-event {
+	margin-left: 45%;
+	margin-top: -6.8%;
+}
+.update-info {
+	margin-left: 55%;
+	margin-top: -9.4%;
+}
+.add-event:hover, .add-event:focus, add-event:active, .show-info:hover, .show-info:focus, show-info:active, .update-info:hover, .update-info:focus, .update-info:active {
 	background-color: rgba(227, 208, 185, 1);
 	color: rgba(254, 156, 69, 1);
 }
