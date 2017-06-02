@@ -10,7 +10,4 @@
     while($row = $q->fetch()){
     	echo $row[0];
     }
-
-
-
 ?>

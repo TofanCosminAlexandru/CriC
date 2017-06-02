@@ -59,7 +59,8 @@ create table earthquakes(
   safe_date date,
   evacuated integer,
   disappeared integer,
-  deaths integer
+  deaths integer,
+  eventType varchar2(200) not null
 );
 /
 
@@ -75,7 +76,8 @@ create table fires(
   safe_date date,
   evacuated integer,
   disappeared integer,
-  deaths integer
+  deaths integer,
+  eventType varchar2(200) not null
 );
 /
 
@@ -91,7 +93,8 @@ create table floods(
   safe_date date,
   evacuated integer,
   disappeared integer,
-  deaths integer
+  deaths integer,
+  eventType varchar2(200) not null
 );
 /
 
@@ -107,7 +110,8 @@ create table tshunamis(
   safe_date date,
   evacuated integer,
   disappeared integer,
-  deaths integer
+  deaths integer,
+  eventType varchar2(200) not null
 );
 /
 
@@ -125,7 +129,8 @@ create table eruptions(
   safe_date date,
   evacuated integer,
   disappeared integer,
-  deaths integer
+  deaths integer,
+  eventType varchar2(200) not null
 );
 /
 
@@ -141,7 +146,8 @@ create table avalanches(
   safe_date date,
   evacuated integer,
   disappeared integer,
-  deaths integer
+  deaths integer,
+  eventType varchar2(200) not null
 );
 /
 
