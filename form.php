@@ -30,7 +30,7 @@
     </div>
 
     <h4> I have information about someone </h4>
-    <form action="" method="post">
+    <form action="" method="post" enctype = "multipart/form-data" class ="change-picture">
      <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
       <input  style="color: green" id="first_name" type="text" class="form-control" name="first_name" placeholder="First name of the person..." required>
@@ -95,18 +95,8 @@
 	</div>
 
 	<h4>Photo</h4>
-	<div class="radio">
-	 <div class="form-group">
- 	 <label><input type="radio" name="optradio">URL: </label>
-     <label for="inputsm"></label>
-     <input class="form-control input-sm" id="inputsm" type="text">
-    </div>
-	</div>
-	<div class="radio">
-	  <label><input type="radio" name="optradio">Upload: </label>
-	  <label class="control-label"></label>
-<input id="input-1a" type="file" class="file" data-show-preview="false">
-	</div>
+  <h5><b>If you have a picture with this person please insert it</b></h5>
+	<input type = "file" id = "img" name = "img">
     
     <hr>
     <hr>
@@ -155,14 +145,70 @@
         )
     );
 
-  if($result){
-    $message = "You insert new account!!! Congratulation!";
-      echo "<script type='text/javascript'>alert('$message');</script>";
-  }
-  else{
-    die("Execute query error, because: ". print_r($conn->errorInfo(), true));
-   }
- }
+ 
   
+  define ('IMGDIR', 'C:\\xampp\\htdocs\\RepoCriC\\CriC\\images\\'); // numele directorului cu imagini
+
+    // prevenim transferuri periculoase
+    if (!isset($_FILES['img']['error']) || is_array($_FILES['img']['error'])) {
+      throw new RuntimeException ('Upload: parametri eronati!');
+    }
+    
+    // verificam daca transferul e in regula
+    switch ($_FILES['img']['error']) {
+      case UPLOAD_ERR_OK:
+        break;
+      case UPLOAD_ERR_NO_FILE:
+        throw new RuntimeException ('Upload: fisier netrimis!');
+      case UPLOAD_ERR_INI_SIZE:
+      case UPLOAD_ERR_FORM_SIZE:
+        throw new RuntimeException ('Upload: fisier prea mare!');
+      default:
+        throw new RuntimeException ('Upload: eroare necunoscuta!');
+    }
+
+    // acceptam fisiere de maxim 100 MB
+    if ($_FILES['img']['size'] > 1024 * 1024 * 100) {
+      throw new RuntimeException ('Upload: fisier prea mare!');
+    }
+    
+    // verificam daca a fost trimisa o imagine pe baza tipurilor MIME
+    $finfo = new finfo(FILEINFO_MIME_TYPE);
+    if (FALSE === $ext = array_search ($finfo->file($_FILES['img']['tmp_name']),
+      array ('jpg' => 'image/jpeg',
+           'png' => 'image/png',
+           'gif' => 'image/gif'), true)) {
+      throw new RuntimeException ('Upload: format incorect!');
+    }
+    
+    // adaugam noua imagine in directorul cu imagini
+    $image_name = basename($_FILES['img']['name']);
+    if (!move_uploaded_file ($_FILES['img']['tmp_name'], IMGDIR . $image_name)) {
+      throw new RuntimeException ('Upload: eroare la salvare!');
+    }
+
+    $max_id = $conn -> query("select max(id) as max from PERSON_FINDER")->fetch()[0];
+    $image_name = "images/" . $image_name;
+    
+    // facem update-ul in baza de date
+    $sql = "UPDATE PERSON_FINDER set photo = :picture where id = :max_id";     
+    $q = $conn->prepare($sql);
+    $result1 = $q->execute(
+      array( 
+          ':picture'   => $image_name,
+          ':max_id'    => $max_id
+        )
+    );
+
+
+     if($result && $result1){
+     $message = "You insert new account!!! Congratulation!";
+      echo "<script type='text/javascript'>alert('$message');</script>";
+     }
+     else{
+        die("Execute query error, because: ". print_r($conn->errorInfo(), true));
+     }
+ }
+    
 
 ?>

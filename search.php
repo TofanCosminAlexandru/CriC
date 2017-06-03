@@ -3,7 +3,7 @@
     
     if(!empty($_REQUEST['search'])){
     $search = strtolower($_REQUEST['search']);
-    $sql = "SELECT id,first_name,last_name,status from person_finder where lower(first_name) like '%$search%' or lower(last_name) like '%$search%' ";
+    $sql = "SELECT id,first_name,last_name,status,photo from person_finder where lower(first_name) like '%$search%' or lower(last_name) like '%$search%' ";
 
     $q = $conn->prepare($sql);
     $q->execute();
@@ -13,6 +13,7 @@
     $q->bindColumn(2, $first_name);
     $q->bindColumn(3, $last_name);
     $q->bindColumn(4, $status); 
+    $q->bindColumn(5, $photo); 
     }
 ?>
 
@@ -89,7 +90,7 @@ input[type=text]:focus {
         <table style="width:100%">
         <tr>
         <td>
-          <img src="" width="60" height="60">
+          <img src="<?php echo $row[4]?>" width="70" height="70">
         </td>
         <td>
         <h4 class="list-group-item-heading"><?php echo $row[1].' '.$row[2]; ?></h4>

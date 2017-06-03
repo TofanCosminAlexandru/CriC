@@ -4,7 +4,7 @@
 
     $id = $_REQUEST['id'];
     $sql = "SELECT id,first_name,last_name,age,sex,email,phone_number,street_name,neighborhood,city,zip_code,
-    home_country,DBMS_LOB.substr(description,2000) from person_finder where id=$id";
+    home_country,DBMS_LOB.substr(description,2000),photo from person_finder where id=$id";
 
     $q = $conn->prepare($sql);
     $q->execute();
@@ -23,6 +23,7 @@
     $q->bindColumn(11, $zip_code);
     $q->bindColumn(12, $home_country);
     $q->bindColumn(13, $description);
+    $q->bindColumn(14, $photo);
     
 
 
@@ -34,6 +35,8 @@
 <title>CriC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
 <body>
 
 
@@ -43,45 +46,73 @@
 
 <div class="w3-container">
   
-  <br><br><br>
+  <br><br>
   <div class="w3-card-4" style="width:60%">
   	<?php while($row = $q->fetch()): ?>
     <header class="w3-container w3-light-grey">
       <h3><?php echo $row[1].' '.$row[2]; ?></h3>
     </header>
     <div class="w3-container">
+      <br>
       <p>Source of this record:</p>
       <hr>
-      <!-- <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px"> -->
+      
+      <table style="width: 100%">
+      <tr>
+      <td>
       <ul>
-      	<li>Age: <?php echo $row[3]; ?></li>
-      	<li>Sex: <?php echo $row[4]; ?></li>
-      	<li>Email: <?php echo $row[5]; ?></li>
-      	<li>Phone number: <?php echo $row[6]; ?></li>
-      	<li>Street name: <?php echo $row[7]; ?></li>
-      	<li>Neighborhood: <?php echo $row[8]; ?></li>
-      	<li>City: <?php echo $row[9]; ?></li>
-      	<li>Zip code: <?php echo $row[10]; ?></li>
-      	<li>Home country: <?php echo $row[11]; ?></li>
-      	<li>Description(how to identify this person): <?php echo $row[12]; ?></li>
+      	<li><b>Age</b>: <?php echo $row[3]; ?></li>
+      	<li><b>Sex</b>: <?php echo $row[4]; ?></li>
+      	<li><b>Email</b>: <?php echo $row[5]; ?></li>
+      	<li><b>Phone number</b>: <?php echo $row[6]; ?></li>
+      	<li><b>Street name</b>: <?php echo $row[7]; ?></li>
+      	<li><b>Neighborhood</b>: <?php echo $row[8]; ?></li>
+      	<li><b>City</b>: <?php echo $row[9]; ?></li>
+      	<li><b>Zip code</b>: <?php echo $row[10]; ?></li>
+      	<li><b>Home country</b>: <?php echo $row[11]; ?></li>
+        <hr>
+      	<li><b>Description(how to identify this person)</b>: <?php echo $row[12]; ?></li>
       </ul>
+      </td>
+      <td>
+          <img src="<?php echo $row[13]; ?>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:300px">
+      </td>
+      </tr>
+      </table>
       <br>
     </div>
-    <button class="w3-button w3-block w3-dark-grey">A possible location for this person</button>
-    <?php endwhile; ?>
+   
+     <?php endwhile; ?>
+     <button type="button" class="w3-button w3-block w3-dark-grey" data-toggle="modal" data-target="#myModal">A possible location for this person</button>
   
   </div>
 </div>
-	
 
+ 
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Location</h4>
+        </div>
+        <div class="modal-body">
+          <p>Aici va fi o harta :))</p>
+        </div>
+        <div class="modal-footer">
+          <button style="background: #616161;" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
