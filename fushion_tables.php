@@ -1,5 +1,6 @@
 <?php
 
+	session_start();
 	$username = 'projectTW';
 	$password = 'PROJECTTW';
 	$connection_string = 'localhost/xe';
@@ -14,7 +15,24 @@
 	if(!$connection)
 		echo 'Conectare nereusita!';
 	
-	$user_cric_code = 'CRIC';
+	$user_cric_code = "";
+	$query = "select cric_code from cric_code where id = :id";
+			
+	$parsed_query = oci_parse($connection, $query); // parsarea selectului
+	oci_bind_by_name($parsed_query, ':id', $_SESSION['id']);
+	$result = @oci_execute($parsed_query); // executarea selectului
+	
+	if (!$result) { // in caz de a aparut exceptie
+		$exception = oci_error($parsed_query); // preluam intregul text de eroare din baza de date
+		echo 'Error ';
+		$list = explode("ORA", $exception['message']); // ne intereseaza doar codul si mesajul de eroare
+		echo $list[1];
+	}
+	else {
+		$row = oci_fetch_array($parsed_query, OCI_ASSOC);
+		$user_cric_code = $row['CRIC_CODE'];
+	}
+		
 	$event = $_REQUEST["type_disaster"];
 	$event_date = $_REQUEST["type_date"];
 	$event_date = explode('T', $event_date);

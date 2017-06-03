@@ -24,7 +24,6 @@
     
 	<header>
 		<h3 class="header-title" >Crisis Containment Service</h3>
-		<h4 style="text-align: right; color:#FE9C45; padding: 10px;"> <?php echo '<b>Welcome, </b>'.$_SESSION['first_name'].' '.$_SESSION['last_name']?></h4>
 	</header>
 	
 	  <label for="show-menu" class="show-menu">Meniu</label>
@@ -76,10 +75,9 @@
 								
 							<div class="add-event-body" id="add-event-body">
 								<div class="add-event-form">
-									<form>
 										<p>
 											<label for="disaster">Eveniment: </label>
-											<select id="disaster" name="disaster">
+											<select id="disaster" name="type_disaster" required>
 												<option disabled selected value></option>
 												<option>Cutremur</option>
 												<option>Incendiu</option>
@@ -91,17 +89,16 @@
 										</p>
 										<p>
 											<label for="date">Data declarare risc: </label>
-											<input type="datetime-local" name="type_date" id="date">
+											<input type="datetime-local" name="type_date" id="date" required>
 										</p>
 										<p>
 											<label for="location">Locatie: </label>
-											<input type="text" id="location" name="type_location">
+											<input type="text" id="location" name="type_location" required>
 										</p>
 										<p>
 											<label for="risc-grade">Grad de risc: </label>
-											<input type="number" min="1" max="4" step="1" id="risc-grade" name="type_risc-grade">
+											<input type="number" min="1" max="4" step="1" id="risc-grade" name="type_risc-grade" required>
 										</p>
-									</form>
 								</div>
 							</div>
 						</div>
@@ -170,7 +167,7 @@
 						</div>
 						
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-default" id="submit-add-event">Submit</button>
+							<button type="submit" class="btn btn-default" id="submit-update-info">Submit</button>
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						</div>
 					</form>

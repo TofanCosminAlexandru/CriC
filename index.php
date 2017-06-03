@@ -24,6 +24,16 @@
 
             $_SESSION['last_name'] = $row[1];
             $_SESSION['first_name'] = $row[2];
+			$_SESSION['id'] = $row['ID'];
+			$_SESSION['email'] = $row['EMAIL'];
+			$_SESSION['country'] = $row['COUNTRY'];
+			$_SESSION['city'] = $row['CITY'];
+			$_SESSION['date_of_birth'] = $row['DATE_OF_BIRTH'];
+			$_SESSION['hobbies'] = $row['HOBBIES'];
+			$_SESSION['phone_number'] = $row['PHONE_NUMBER'];
+			$_SESSION['grade'] = $row['GRADE'];
+			$_SESSION['section'] = $row['SECTION'];
+			$_SESSION['profile_picture'] = $row['PROFILE_PICTURE'];
            
 			header("Location: home_on.php");
 		}

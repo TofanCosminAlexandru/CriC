@@ -24,7 +24,7 @@ create table users(
   country varchar2(100),
   city varchar2(100),
   date_of_birth varchar2(50),
-  hobbies clob,
+  hobbies varchar2(200),
   phone_number varchar2(15),
   grade varchar2(100),
   section varchar2(100),

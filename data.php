@@ -16,7 +16,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-	<link rel="stylesheet" href="profile.css">
+	<link rel="stylesheet" href="data.css">
   
   <body>
     
@@ -37,14 +37,13 @@
 			<li class="nav-items"> <a href="transmit-alerts.php">Transmit Alerts</a> </li>
 			<li class="nav-items"> <a href="contact_on.php">Contact</a> </li>
 			<li class="nav-items"> <a href="profile.php">Profile</a> </li>
-			<li class="nav-items"> <a href="logout.php">Logout</a> </li>
+			<li class="nav-items"> <a href="index.php">Logout</a> </li>
 		</ul>
 	</div>
 	
 	<img class="logo-header" src="images/logo.png" alt="Cric" width="12%">
-	
+
 	<main>
-	
 		<div class="left-panel">
 			<img class="profile_image" src="<?php echo $_SESSION['profile_picture'] ?>" alt="Cric">
 			<?php echo '<p>' . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'] . '</p>' ?>
@@ -54,15 +53,16 @@
 		
 		<div class="right-panel">
 			<ul class="menu-list">
-				<li class="nav-items"> <a href="profile.php">My Profile</a> </li>
-				<li class="nav-items"> <a href="data.php">My data</a> </li>
-				<li class="nav-items"> <div> <button type="button" class="edit-data btn btn-info btn-lg" data-toggle="modal" data-target="#myModal5">Edit Data</button> </div> </li>
+				<li class="nav-items"><a href="profile.php">My Profile</a></li>
+				<li class="nav-items"><a href="data.php">My data</a></li>
+				<li class="nav-items"> <button type="button" class="edit-data btn btn-info btn-lg" data-toggle="modal" data-target="#myModal5">Edit Data</button> </li>
 				<li class="nav-items"> <button type="button" class="change-picture btn btn-info btn-lg" data-toggle="modal" data-target="#myModal6">Change Profile Picture</button> </li>
 			</ul>
 			
 			<div class="my-profile">
-				<iframe height="400px" width="100%" src="my_profile.php" name="iframe_a"></iframe>
+				<iframe height="400px" width="100%" src="my_data.php" name="iframe_a"></iframe>
 			</div>
+			
         </div>
 		
 		<div class="modal fade" id="myModal5" role="dialog">
@@ -122,7 +122,7 @@
 						<h3 class="modal-title">Change Profile Picture</h3>
 					</div>
 					
-					<form action = "upload_picture.php" method = "POST" enctype = "multipart/form-data">
+					<form action = "upload_picture.php" method = "POST" enctype = "multipart/form-data" class = "change-picture">
 						<div class="modal-body">
 								<p>
 									<input type = "hidden" name = "MAX_FILE_SIZE" value = "300000">

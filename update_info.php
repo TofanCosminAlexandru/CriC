@@ -1,5 +1,6 @@
 <?php
 	
+	session_start();
 	$username = 'projectTW';
 	$password = 'PROJECTTW';
 	$connection_string = 'localhost/xe';
