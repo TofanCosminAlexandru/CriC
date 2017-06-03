@@ -1,0 +1,309 @@
+<!DOCTYPE html >
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <title>Using MySQL and PHP with Google Maps</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(49.590858, 14.127759),
+          zoom: 4
+        });
+        var infoWindow = new google.maps.InfoWindow;
+
+          // Change this depending on the name of your PHP or XML file
+          downloadUrl('../MAP/generate_XML_file.php', function(data) {
+            var xml = data.responseXML;
+            var markers = xml.documentElement.getElementsByTagName('marker');
+            Array.prototype.forEach.call(markers, function(markerElem) {
+
+              var eventType = markerElem.getAttribute('EVENTTYPE');
+
+              if(eventType.localeCompare('avalanches')==0){
+                var eventDate = markerElem.getAttribute('EVENT_DATE');
+                var continent = markerElem.getAttribute('CONTINENT');
+                var country = markerElem.getAttribute('COUNTRY');
+                var location1 = markerElem.getAttribute('LOCATION');
+                var mountains = markerElem.getAttribute('MOUNTAINS');
+                var riscGrade = markerElem.getAttribute('RISC_GRADE');
+                var location = continent.concat(" ",country," ",location1," ",mountains);
+                var lat = getCoordonatesLat(location);
+                var lng = getCoordonatesLng(location);
+                console.log(location);
+                console.log(lat.responseText+" "+lng.responseText)
+
+                var point = new google.maps.LatLng(lat.responseText,lng.responseText);
+
+                var message = "<div>"+"<strong>Event: </strong>"+"Avalanches"+"<br>"+"<strong>Event date: </strong>"+eventDate+"<br>"+
+                "<strong>Location: </strong>"+location+"<br>"+"<strong>Mountains: </strong>"+mountains+"<br>"+"<strong>Risc grade: </strong>"+
+                "<img src=\"../"+riscGrade+"\"<br>"+"</div>"
+                
+                var image = "../MAP/mapIcons/avalanche.png";
+                var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                icon: image
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                  content: message
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                  infowindow.open(map, marker);
+                });
+
+              } else if(eventType.localeCompare('earthquakes')==0){
+                var eventDate = markerElem.getAttribute('EVENT_DATE');
+                var magnitude = markerElem.getAttribute('MAGNITUDE');
+                var surface = markerElem.getAttribute('SURFACE');
+                var depth = markerElem.getAttribute('DEPTH');
+                var continent = markerElem.getAttribute('CONTINENT');
+                var country = markerElem.getAttribute('COUNTRY');
+                var location = markerElem.getAttribute('LOCATION');
+                var riscGrade = markerElem.getAttribute('RISC_GRADE');
+                var location1 = continent.concat(" ",country," ",location);
+
+                var lat = getCoordonatesLat(location);
+                var lng = getCoordonatesLng(location);
+                console.log(location);
+                console.log(lat.responseText+" "+lng.responseText)
+
+                var point = new google.maps.LatLng(lat.responseText,lng.responseText);
+
+                var message = "<div>"+"<strong>Event: </strong>"+"Earthquakes"+"<br>"+"<strong>Event date: </strong>"+eventDate+"<br>"+
+                "<strong>Location: </strong>"+location1+"<br>"+"<strong>Magnitude: </strong>"+magnitude+"<br>"+"<strong>Risc grade: </strong>"+
+                "<img src=\"../"+riscGrade+"\"<br>"+"</div>";
+                
+                var image = "../MAP/mapIcons/cracked-ground-between-houses.png";
+                var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                icon: image
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                  content: message
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                  infowindow.open(map, marker);
+                });
+
+              } else if(eventType.localeCompare('eruptions')==0){
+                  
+                var eventDate = markerElem.getAttribute('EVENT_DATE');
+                var volcanoName = markerElem.getAttribute('VOLCANO_NAME');
+                var volcanoType = markerElem.getAttribute('VOLCANO_TYPE');
+                var continent = markerElem.getAttribute('CONTINENT');
+                var country = markerElem.getAttribute('COUNTRY');
+                var location = markerElem.getAttribute('LOCATION');
+                var riscGrade = markerElem.getAttribute('RISC_GRADE');
+                var location1 = continent.concat(" ",country," ",location);
+
+                var lat = getCoordonatesLat(location);
+                var lng = getCoordonatesLng(location);
+                console.log(location);
+                console.log(lat.responseText+" "+lng.responseText)
+
+                var point = new google.maps.LatLng(lat.responseText,lng.responseText);
+
+                var message = "<div>"+"<strong>Event: </strong>"+"Eruptions"+"<br>"+"<strong>Event date: </strong>"+eventDate+"<br>"+
+                "<strong>Location: </strong>"+location1+"<br>"+"<strong>Volcano name: </strong>"+volcanoName+"<br>"+"<strong>Risc grade: </strong>"+
+                "<img src=\"../"+riscGrade+"\"<br>"+"</div>";
+                
+                var image = "../MAP/mapIcons/volcano.png";
+                var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                icon: image
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                  content: message
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                  infowindow.open(map, marker);
+                });
+
+              } else if(eventType.localeCompare('fires')==0){
+                  
+                var eventDate = markerElem.getAttribute('EVENT_DATE');
+                var surface = markerElem.getAttribute('SURFACE');
+                var continent = markerElem.getAttribute('CONTINENT');
+                var country = markerElem.getAttribute('COUNTRY');
+                var location = markerElem.getAttribute('LOCATION');
+                var riscGrade = markerElem.getAttribute('RISC_GRADE');
+                var location1 = continent.concat(" ",country," ",location);
+
+                var lat = getCoordonatesLat(location);
+                var lng = getCoordonatesLng(location);
+                console.log(location);
+                console.log(lat.responseText+" "+lng.responseText)
+
+                var point = new google.maps.LatLng(lat.responseText,lng.responseText);
+
+                var message = "<div>"+"<strong>Event: </strong>"+"Fires"+"<br>"+"<strong>Event date: </strong>"+eventDate+"<br>"+
+                "<strong>Location: </strong>"+location1+"<br>"+"<strong>Surface: </strong>"+surface+"<br>"+"<strong>Risc grade: </strong>"+
+                "<img src=\"../"+riscGrade+"\"<br>"+"</div>";
+                
+                var image = "../MAP/mapIcons/flame.png";
+                var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                icon: image
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                  content: message
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                  infowindow.open(map, marker);
+                });
+
+              } else if(eventType.localeCompare('floods')==0){
+                  
+                var eventDate = markerElem.getAttribute('EVENT_DATE');
+                var surface = markerElem.getAttribute('SURFACE');
+                var continent = markerElem.getAttribute('CONTINENT');
+                var country = markerElem.getAttribute('COUNTRY');
+                var location = markerElem.getAttribute('LOCATION');
+                var riscGrade = markerElem.getAttribute('RISC_GRADE');
+                var location1 = continent.concat(" ",country," ",location);
+
+                var lat = getCoordonatesLat(location);
+                var lng = getCoordonatesLng(location);
+                console.log(continent);
+                console.log(lat.responseText+" "+lng.responseText)
+
+                var point = new google.maps.LatLng(lat.responseText,lng.responseText);
+
+                var message = "<div>"+"<strong>Event: </strong>"+"Floods"+"<br>"+"<strong>Event date: </strong>"+eventDate+"<br>"+
+                "<strong>Location: </strong>"+location1+"<br>"+"<strong>Surface: </strong>"+surface+"<br>"+"<strong>Risc grade: </strong>"+
+                "<img src=\"../"+riscGrade+"\"<br>"+"</div>";
+                
+                var image = "../MAP/mapIcons/flood.png";
+                var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                icon: image
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                  content: message
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                  infowindow.open(map, marker);
+                });
+
+              } else if(eventType.localeCompare('tshunamis')==0){
+                  
+                var eventDate = markerElem.getAttribute('EVENT_DATE');
+                var area = markerElem.getAttribute('AREA');
+                var magnitude = markerElem.getAttribute('MAGNITUDE');
+                var continent = markerElem.getAttribute('CONTINENT');
+                var country = markerElem.getAttribute('COUNTRY');
+                var location = markerElem.getAttribute('LOCATION');
+                var riscGrade = markerElem.getAttribute('RISC_GRADE');
+
+                var lat = getCoordonatesLat(area);
+                var lng = getCoordonatesLng(area);
+                console.log(area);
+                console.log(lat.responseText+" "+lng.responseText)
+
+                var point = new google.maps.LatLng(lat.responseText,lng.responseText);
+
+                var message = "<div>"+"<strong>Event: </strong>"+"Tshunami"+"<br>"+"<strong>Event date: </strong>"+eventDate+"<br>"+
+                "<strong>Location: </strong>"+location+"<br>"+"<strong>Magnitude: </strong>"+magnitude+"<br>"+"<strong>Risc grade: </strong>"+
+                "<img src=\"../"+riscGrade+"\"<br>"+"</div>";
+                
+                var image = "../MAP/mapIcons/tsunami.png";
+                var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                icon: image
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                  content: message
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                  infowindow.open(map, marker);
+                });
+              }
+
+            });
+          });
+        };
+
+        function getCoordonatesLat (location) {
+          return $.ajax({
+            url:"../MAP/getCoordonatesLat.php",
+            type: "post", //request type,
+            data: {location: location},
+            async:    false,
+            success:function(result){
+              return result;
+            }
+          });
+        };
+
+        function getCoordonatesLng (location) {
+          return $.ajax({
+            url:"../MAP/getCoordonatesLng.php",
+            type: "post", //request type,
+            data: {location: location},
+            async:    false,
+            success:function(result){
+              return result;
+            }
+        });
+      };
+
+      function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+            new ActiveXObject('Microsoft.XMLHTTP') :
+            new XMLHttpRequest;
+
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            request.onreadystatechange = doNothing;
+            callback(request, request.status);
+          }
+        };
+
+        request.open('GET', url, true);
+        request.send(null);
+      };
+
+      function doNothing() {}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaJ8qJ6Pk7VrtnUjqT6iI-q6VpJDu-cRw&callback=initMap" async defer>
+    </script>
+  </body>
+</html>
