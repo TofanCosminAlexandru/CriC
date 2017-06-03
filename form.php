@@ -67,7 +67,7 @@
     <h4>Home Address</h4>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-      <input id="street" type="text" class="form-control" name="street" placeholder="Street name">
+      <input id="street" type="text" class="form-control" name="street" placeholder="Street name" required>
      </div>
      <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
@@ -147,7 +147,7 @@
 
  
   
-  define ('IMGDIR', 'C:\\Apache24\\htdocs\\TW_PROJECT_GIT\\CriC\\images\\'); // numele directorului cu imagini
+  define ('IMGDIR', 'C:\\xampp\\htdocs\\RepoCriC\\CriC\\images\\'); // numele directorului cu imagini
 
     // prevenim transferuri periculoase
     if (!isset($_FILES['img']['error']) || is_array($_FILES['img']['error'])) {
@@ -202,7 +202,7 @@
 
 
      if($result && $result1){
-     $message = "You insert new account!!! Congratulation!";
+     $message = "You inserted new record. Thank you very much !";
       echo "<script type='text/javascript'>alert('$message');</script>";
      }
      else{

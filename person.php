@@ -47,7 +47,7 @@
 <div class="w3-container">
   
   <br><br>
-  <div class="w3-card-4" style="width:60%">
+  <div class="w3-card-4" style="width:60%; margin: auto;">
   	<?php while($row = $q->fetch()): ?>
     <header class="w3-container w3-light-grey">
       <h3><?php echo $row[1].' '.$row[2]; ?></h3>
@@ -96,7 +96,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Location</h4>
+          <h4 class="modal-title">A possible location:</h4>
         </div>
         <div class="modal-body">
           <iframe src="../CriC/MAP/PersonFinderMap/index2.html?location=<?php echo $location;?>
