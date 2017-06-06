@@ -54,7 +54,7 @@
 		</div>
 		
 		<div class="table">
-			<table class="cutremur">
+			<table class="Cutremur">
 				<thead>
 					<tr>
 						<th scope="row" colspan="13">Cutremur</th>
@@ -82,7 +82,7 @@
 		</div>
 		
 		<div class="table">
-			<table class="incendiu">
+			<table class="Incendiu">
 				<thead>
 					<tr>
 						<th scope="row" colspan="11">Incendiu</th>
@@ -108,7 +108,7 @@
 		</div>
 		
 		<div class="table">
-			<table class="inundatie">
+			<table class="Inundatie">
 				<thead>
 					<tr>
 						<th scope="row" colspan="13">Inundatie</th>
@@ -134,7 +134,7 @@
 		</div>
 		
 		<div class="table">
-			<table class="tshunami">
+			<table class="Tshunami">
 				<thead>
 					<tr>
 						<th scope="row" colspan="11">Tshunami</th>
@@ -160,7 +160,7 @@
 		</div>
 		
 		<div class="table">
-			<table class="vulcan">
+			<table class="Vulcan">
 				<thead>
 					<tr>
 						<th scope="row" colspan="13">Eruptie vulcanica</th>
@@ -188,7 +188,7 @@
 		</div>
 		
 		<div class="table">
-			<table class="avalansa">
+			<table class="Avalansa">
 				<thead>
 					<tr>
 						<th scope="row" colspan="11">Avalansa</th>
@@ -226,8 +226,11 @@
 					<div class="modal-body">
 						<form id="alert-form">
 							<div class="alert-body" id="alert-body">
-								<div class="alert-id">
-									<input type="hidden" name="alert-id" class="hidden-id" value="">
+								<div class="event-id">
+									<input type="hidden" name="event-id" class="hidden-id" value="">
+								</div>
+								<div class="event-type">
+									<input type="hidden" name="event-type" class="hidden-type" value="">
 								</div>
 
 								<div class="alert-type">
@@ -257,27 +260,27 @@
 									<h4 class="alert-title">Selectati raza de alertare</h4>
 									<div class="radio">
 										<label>
-											<input type="radio" name="alert-area" value="local"> Local
+											<input type="radio" name="alert-area" value="Local"> Local
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="alert-area" value="county"> Regional
+											<input type="radio" name="alert-area" value="Regional"> Regional
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="alert-area" value="nation"> National
+											<input type="radio" name="alert-area" value="National"> National
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="alert-area" value="continent"> Continental
+											<input type="radio" name="alert-area" value="Continental"> Continental
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="alert-area" value="global"> Global
+											<input type="radio" name="alert-area" value="Global"> Global
 										</label>
 									</div>
 								</div>

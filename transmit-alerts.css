@@ -279,22 +279,22 @@ tfoot tr:nth-child(2) td {
 	text-align: left;
 	padding: 7px 1px 7px 1px;
 }
-.cutremur thead tr:nth-child(1) th {
+.Cutremur thead tr:nth-child(1) th {
 	background-color: rgba(203, 245, 216, 0.9);
 }
-.incendiu thead tr:nth-child(1) th {
+.Incendiu thead tr:nth-child(1) th {
 	background-color: rgba(255, 233, 155, 0.9);
 }
-.inundatie thead tr:nth-child(1) th {
+.Inundatie thead tr:nth-child(1) th {
 	background-color: rgba(168, 228, 255, 0.9);
 }
-.tshunami thead tr:nth-child(1) th {
+.Tshunami thead tr:nth-child(1) th {
 	background-color: rgba(130, 130, 255, 0.9);
 }
-.vulcan thead tr:nth-child(1) th {
+.Vulcan thead tr:nth-child(1) th {
 	background-color: rgba(250, 180, 182, 0.9);
 }
-.avalansa thead tr:nth-child(1) th {
+.Avalansa thead tr:nth-child(1) th {
 	background-color: rgba(203, 194, 233, 0.9);
 }
 
