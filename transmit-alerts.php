@@ -24,7 +24,6 @@
     
 	<header>
 		<h3 class="header-title" >Crisis Containment Service</h3>
-		<h4 style="text-align: right; color:#FE9C45; padding: 10px;"> <?php echo '<b>Welcome, </b>'.$_SESSION['first_name'].' '.$_SESSION['last_name']?></h4>
 	</header>
 	
 	<label for="show-menu" class="show-menu">Meniu</label>
@@ -39,7 +38,7 @@
 			<li class="nav-items"> <a href="map_on.php">Map</a> </li>
 			<li class="nav-items"> <a href="person-finder_on.php">Person Finder</a> </li>
 			<li class="nav-items"> <a href="fushion-tables_on.php">Fushion Tables</a> </li>
-			<li class="nav-items"> <a href="transmit-alerts.php">Transmit Alerts</a> </li>
+			<li class="nav-items"> <a href="transmit-alerts_on.php">Transmit Alerts</a> </li>
 			<li class="nav-items"> <a href="contact_on.php">Contact</a> </li>
 			<li class="nav-items"> <a href="profile.php">Profile</a> </li>
 			<li class="nav-items"> <a href="logout.php">Logout</a> </li>
@@ -50,29 +49,168 @@
 	
 	<main>
 	
-		<div class="wrapper1">
-			<div class="wrapper1-header">
-				<h4 class="wrapper1-title">Selectati tipul de eveniment pe care doriti sa-l transmiteti si bifati evenimentul:</h4>
-			</div>
+		<div class="wrapper1-header">
+				<h4 class="wrapper1-title">Selectati evenimentul pe care doriti sa-l transmiteti</h4>
+		</div>
+		
+		<div class="table">
+			<table class="cutremur">
+				<thead>
+					<tr>
+						<th scope="row" colspan="13">Cutremur</th>
+					</tr>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Data</th>
+						<th scope="col">Magnitudine</th>
+						<th scope="col">Suprafata afectata(m<sup>2</sup>)</th>
+						<th scope="col">Adancime</th>
+						<th scope="col">Continent</th>
+						<th scope="col">Tara</th>
+						<th scope="col">Locatie</th>
+						<th scope="col">Grad de risc</th>
+						<th scope="col">Data declarare siguranta</th>
+					</tr>
+				</thead>
 				
-			<div class="wrapper1-body" id="wrapper1-body">
-				<div class="wrapper1-form">
-					<form>
-						<p>
-							<select id="disaster" name="disaster" class="form-control">
-								<option disabled selected value></option>
-								<option>Cutremur</option>
-								<option>Incendiu</option>
-								<option>Inundatie</option>
-								<option>Tshunami</option>
-								<option>Eruptie vulcanica</option>
-								<option>Avalansa</option>
-							</select>
-						</p>
-					</form>
-				</div>
-
-			</div>
+				<tbody id = "earthquakes_tbody">
+					
+				</tbody>
+				
+				
+			</table>
+		</div>
+		
+		<div class="table">
+			<table class="incendiu">
+				<thead>
+					<tr>
+						<th scope="row" colspan="11">Incendiu</th>
+					</tr>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Data</th>
+						<th scope="col">Suprafata afectata(m<sup>2</sup>)</th>
+						<th scope="col">Continent</th>
+						<th scope="col">Tara</th>
+						<th scope="col">Locatie</th>
+						<th scope="col">Grad de risc</th>
+						<th scope="col">Data declarare siguranta</th>
+					</tr>
+				</thead>
+				
+				<tbody id = "fires_tbody">
+					
+				</tbody>
+				
+				
+			</table>
+		</div>
+		
+		<div class="table">
+			<table class="inundatie">
+				<thead>
+					<tr>
+						<th scope="row" colspan="13">Inundatie</th>
+					</tr>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Data</th>
+						<th scope="col">Suprafata afectata(m<sup>2</sup>)</th>
+						<th scope="col">Continent</th>
+						<th scope="col">Tara</th>
+						<th scope="col">Locatie</th>
+						<th scope="col">Grad de risc</th>
+						<th scope="col">Data declarare siguranta</th>
+					</tr>
+				</thead>
+				
+				<tbody id = "floods_tbody">
+					
+				</tbody>
+				
+				
+			</table>
+		</div>
+		
+		<div class="table">
+			<table class="tshunami">
+				<thead>
+					<tr>
+						<th scope="row" colspan="11">Tshunami</th>
+					</tr>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Data</th>
+						<th scope="col">Arie</th>
+						<th scope="col">Magnitudine</th>
+						<th scope="col">Suprafata afectata(m<sup>2</sup>)</th>
+						<th scope="col">Locatie</th>
+						<th scope="col">Grad de risc</th>
+						<th scope="col">Data declarare siguranta</th>
+					</tr>
+				</thead>
+				
+				<tbody id = "tshunamis_tbody">
+					
+				</tbody>
+				
+				
+			</table>
+		</div>
+		
+		<div class="table">
+			<table class="vulcan">
+				<thead>
+					<tr>
+						<th scope="row" colspan="13">Eruptie vulcanica</th>
+					</tr>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Data</th>
+						<th scope="col">Nume vulcan</th>
+						<th scope="col">Tip vulcan</th>
+						<th scope="col">Index explozivitate vulcanica</th>
+						<th scope="col">Continent</th>
+						<th scope="col">Tara</th>
+						<th scope="col">Locatie</th>
+						<th scope="col">Grad de risc</th>
+						<th scope="col">Data declarare siguranta</th>
+					</tr>
+				</thead>
+				
+				<tbody id = "eruptions_tbody">
+					
+				</tbody>
+				
+				
+			</table>
+		</div>
+		
+		<div class="table">
+			<table class="avalansa">
+				<thead>
+					<tr>
+						<th scope="row" colspan="11">Avalansa</th>
+					</tr>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Data</th>
+						<th scope="col">Continent</th>
+						<th scope="col">Tara</th>
+						<th scope="col">Locatie</th>
+						<th scope="col">Munti</th>
+						<th scope="col">Grad de risc</th>
+						<th scope="col">Data declarare siguranta</th>
+					</tr>
+				</thead>
+				
+				<tbody id = "avalanches_tbody">
+					
+				</tbody>
+				
+				
+			</table>
 		</div>
 				
 
@@ -86,64 +224,69 @@
 					</div>
 							
 					<div class="modal-body">
-						<div class="alert-body" id="alert-body">
-							<div class="alert-type">
-								<h4 class="alert-title">Selectati modurile de alertare</h4>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="alert-type" value="sms"> SMS
-									</label>
+						<form id="alert-form">
+							<div class="alert-body" id="alert-body">
+								<div class="alert-id">
+									<input type="hidden" name="alert-id" class="hidden-id" value="">
 								</div>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="alert-type" value="email"> E-Mail
-									</label>
-								</div>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="alert-type" value="sound"> Alarma sonora publica
-									</label>
-								</div>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="alert-type" value="tv"> Televiziune
-									</label>
-								</div>
-							</div>
-							<div class="alert-area">
-								<h4 class="alert-title">Selectati raza de alertare</h4>
-								<div class="radio">
-									<label>
-										<input type="radio" name="alert-area" value="local"> Local
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="alert-area" value="county"> Regional
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="alert-area" value="nation"> National
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="alert-area" value="continent"> Continental
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="alert-area" value="global"> Global
-									</label>
-								</div>
-							</div>
-						
-							<div>
-								<button type="button" class="btn btn-danger btn-lg" id="alert-btn"">ALERT!</button>
-							</div>
 
-						</div>
+								<div class="alert-type">
+									<h4 class="alert-title">Selectati modurile de alertare</h4>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="alert-sms" value="sms"> SMS
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="alert-email" value="email"> E-Mail
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="alert-sound" value="sound"> Alarma sonora publica
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="alert-tv" value="tv"> Televiziune
+										</label>
+									</div>
+								</div>
+								<div class="alert-area">
+									<h4 class="alert-title">Selectati raza de alertare</h4>
+									<div class="radio">
+										<label>
+											<input type="radio" name="alert-area" value="local"> Local
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="alert-area" value="county"> Regional
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="alert-area" value="nation"> National
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="alert-area" value="continent"> Continental
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="alert-area" value="global"> Global
+										</label>
+									</div>
+								</div>
+							
+								<div>
+									<button type="button" class="btn btn-danger btn-lg" id="alert-btn"">ALERT!</button>
+								</div>
+							</div>
+						</form>
 					</div>
 					
 				</div>
