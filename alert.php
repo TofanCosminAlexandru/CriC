@@ -6,43 +6,34 @@
 
 	include "smsGateway.php";
 
-	/*
+  $username = 'projectTW';
+  $password = 'PROJECTTW';
+  $connection_string = 'localhost/xe';
+  $conn = oci_connect( $username, $password, $connection_string);
 
+  if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+  }
 
-	$username = 'projectTW';
-	$password = 'PROJECTTW';
-	$connection_string = 'localhost/xe';
+  $stid = oci_parse($conn, 'SELECT * FROM earthquakes WHERE id = 4523');
+  oci_execute($stid);
 
-	// conectarea la baza de date
-	$connection = oci_connect(
-		$username,
-		$password,
-		$connection_string
-	);
-
-	if(!$connection) {
-		echo 'Conectare nereusita!';
-	}
-
-	$query = "";
-	$query = 'select * from earthquakes where id = '
-
-
-
-
-
+  while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
+   	$msg = $row['LOCATION'];
+  }
 
 	oci_close($connection);
-*/
+
 	function email(){
 		$headers =  'MIME-Version: 1.0' . "\r\n"; 
 		$headers .= 'From: CriC <project.cric@gmail.com>' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
 		$subj = $_POST['alert-id'];
-		$msg = $_POST['alert-area'];
+		//$msg = $_POST['alert-area'];
 		$email = "alexandru.gabriel009@gmail.com";
-		mail($email, $subj, $msg, $headers);
+		mail($email, $subj, "$msg", $headers);
 	}
 	function sms(){
 		/*$sid = 'AC44cb62b46356beae0ae690aefb043cec';
