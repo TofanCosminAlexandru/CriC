@@ -14,7 +14,24 @@
 	if(!$connection)
 		echo 'Conectare nereusita!';
 	
-	$user_cric_code = 'CRIC';
+	$user_cric_code = "";
+	$query = "select cric_code from cric_code where id = :id";
+			
+	$parsed_query = oci_parse($connection, $query); // parsarea selectului
+	oci_bind_by_name($parsed_query, ':id', $_SESSION['id']);
+	$result = @oci_execute($parsed_query); // executarea selectului
+	
+	if (!$result) { // in caz de a aparut exceptie
+		$exception = oci_error($parsed_query); // preluam intregul text de eroare din baza de date
+		echo 'Error ';
+		$list = explode("ORA", $exception['message']); // ne intereseaza doar codul si mesajul de eroare
+		echo $list[1];
+	}
+	else {
+		$row = oci_fetch_array($parsed_query, OCI_ASSOC);
+		$user_cric_code = $row['CRIC_CODE'];
+	}
+	
 	$event = $_REQUEST["type_disaster"];
 	$event_date = $_REQUEST["type_date"];
 	$event_date = explode('T', $event_date);
@@ -40,6 +57,7 @@
 	$doc->validateOnParse = true;
 	$doc->loadHTMLFile('fushion-tables_on.php');
 	
+	// inseram noua inregistrare in baza de date
 	insert_event($event, $user_cric_code, $event_date, $location, $risc_grade, $connection, $doc);
 	
 	echo $doc->saveHTML(); // salvam modificarea
@@ -50,7 +68,7 @@
 	// functie care insereaza inregistrarea noua in baza de date in tabela corespunzatoare
 	function insert_event($event, $user_cric_code, $event_date, $location, $risc_grade, $connection, $doc) {
 		
-		if($event == "Cutremur"){
+		if($event == "Cutremur") {
 			
 			$magnitude = $_REQUEST["type_magnitude"];
 			$surface = $_REQUEST["type_damaged-area"];
@@ -84,7 +102,7 @@
 			oci_free_statement($parsed_query); // eliberarea resurselor asociate query-ului
 		
 		}
-		elseif($event == "Incendiu"){
+		elseif($event == "Incendiu") {
 			
 			$surface = $_REQUEST["type_damaged-area"];
 			$continent = $_REQUEST["type_continent"];
@@ -113,7 +131,7 @@
 
 			oci_free_statement($parsed_query); // eliberarea resurselor asociate query-ului
 		}
-		elseif($event == "Inundatie"){
+		elseif($event == "Inundatie") {
 			
 			$surface = $_REQUEST["type_damaged-area"];
 			$continent = $_REQUEST["type_continent"];
@@ -142,7 +160,7 @@
 
 			oci_free_statement($parsed_query); // eliberarea resurselor asociate query-ului
 		}
-		elseif($event == "Tshunami"){
+		elseif($event == "Tshunami") {
 			
 			$area = $_REQUEST["type_area"];
 			$magnitude = $_REQUEST["type_magnitude"];
@@ -171,7 +189,7 @@
 
 			oci_free_statement($parsed_query); // eliberarea resurselor asociate query-ului
 		}
-		elseif($event == "Eruptie vulcanica"){
+		elseif($event == "Eruptie vulcanica") {
 			
 			$volcano_name = $_REQUEST["type_volcano-name"];
 			$volcano_type = $_REQUEST["type_volcano-type"];
@@ -204,7 +222,7 @@
 
 			oci_free_statement($parsed_query); // eliberarea resurselor asociate query-ului
 		}
-		elseif($event == "Avalansa"){
+		elseif($event == "Avalansa") {
 			
 			$continent = $_REQUEST["type_continent"];
 			$country = $_REQUEST["type_country"];
@@ -234,6 +252,7 @@
 			oci_free_statement($parsed_query); // eliberarea resurselor asociate query-ului
 		}
 		
+		// afisam tabelele actualizate
 		display_recent_events("Cutremur", $connection, $doc);
 		display_recent_events("Inundatie", $connection, $doc);
 		display_recent_events("Incendiu", $connection, $doc);

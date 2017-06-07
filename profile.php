@@ -55,7 +55,7 @@
 		<div class="right-panel">
 			<ul class="menu-list">
 				<li class="nav-items"> <a href="profile.php">My Profile</a> </li>
-				<li class="nav-items"> <a href="data.php">My data</a> </li>
+				<li class="nav-items"> <a href="data.php">My Data</a> </li>
 				<li class="nav-items"> <div> <button type="button" class="edit-data btn btn-info btn-lg" data-toggle="modal" data-target="#myModal5">Edit Data</button> </div> </li>
 				<li class="nav-items"> <button type="button" class="change-picture btn btn-info btn-lg" data-toggle="modal" data-target="#myModal6">Change Profile Picture</button> </li>
 			</ul>
