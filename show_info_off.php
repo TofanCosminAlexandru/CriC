@@ -18,7 +18,7 @@
 	libxml_use_internal_errors(true);
 	$doc = new DOMDocument('1.0', 'utf-8'); // cream documentul DOM corespunzator fisierului HTML
 	$doc->validateOnParse = true;
-	$doc->loadHTMLFile('C:\Apache24\htdocs\GITHub-Proiect-TW-CriC\CriC\fushion-tables.html');
+	$doc->loadHTMLFile('../CriC/fushion-tables.html');
 
 	display_recent_events("earthquakes", $connection, $doc);
 	display_recent_events("fires", $connection, $doc);
