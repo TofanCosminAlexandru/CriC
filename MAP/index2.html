@@ -3,6 +3,9 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="filter_after_event.js"></script>
+	<script src="filter_after_date.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <title>Using MySQL and PHP with Google Maps</title>
     <style>
@@ -23,6 +26,24 @@
 
   <body>
     <div id="map"></div>
+	
+	<div class="filter" style = "position: absolute; top: 2%; left: 90%; border: 2px solid grey; background-color: #fff; border-radius: 5px; z-index: 5;">
+		<div>
+			<select name="event-type" id="event" form="event-type">
+				<option value="nimic"> </option>
+				<option value="incendiu">Incendiu</option>
+				<option value="inundatie">Inundatie</option>
+				<option value="cutremur">Cutremur</option>
+				<option value="tshunami">Tsunami</option>
+				<option value="vulcan">Vulcan</option>
+				<option value="avalansa">Avalansa</option>
+			</select>
+		</div>
+		
+		<div>
+			<input type="date" name="type_date" id="date">
+		</div>
+	</div>
 
     <script>
         function initMap() {
@@ -303,7 +324,7 @@
 
       function doNothing() {}
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaJ8qJ6Pk7VrtnUjqT6iI-q6VpJDu-cRw&callback=initMap" async defer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm-9v_cbRk1TitOD51Wg-LeE-sBybSYow&callback=initMap" async defer>
     </script>
   </body>
 </html>

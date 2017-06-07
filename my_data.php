@@ -60,7 +60,7 @@
 								select EVENTTYPE, EVENT_DATE, LOCATION, RISC_GRADE from floods where user_cric_code = (select cric_code from cric_code where id = :id) union
 								select EVENTTYPE, EVENT_DATE, LOCATION, RISC_GRADE from tshunamis where user_cric_code = (select cric_code from cric_code where id = :id) union
 								select EVENTTYPE, EVENT_DATE, LOCATION, RISC_GRADE from eruptions where user_cric_code = (select cric_code from cric_code where id = :id) union
-								select EVENTTYPE, EVENT_DATE, LOCATION, RISC_GRADE from avalanches where user_cric_code = (select cric_code from cric_code where id = :id)";
+								select EVENTTYPE, EVENT_DATE, LOCATION, RISC_GRADE from avalanches where user_cric_code = (select cric_code from cric_code where id = :id) order by event_date desc";
 					
 						$parsed_query = oci_parse($connection, $query); // parsarea selectului
 						oci_bind_by_name($parsed_query, ":id", $_SESSION['id']); // asignarea de variabile php variabilelor legate din interogare

@@ -122,7 +122,7 @@
 						<h3 class="modal-title">Change Profile Picture</h3>
 					</div>
 					
-					<form action = "upload_picture.php" method = "POST" enctype = "multipart/form-data" class = "change-picture">
+					<form action = "upload_picture.php" method = "POST" enctype = "multipart/form-data">
 						<div class="modal-body">
 								<p>
 									<input type = "hidden" name = "MAX_FILE_SIZE" value = "300000">

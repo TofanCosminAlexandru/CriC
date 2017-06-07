@@ -129,6 +129,23 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 
+.short_description * {
+	vertical-align: middle;
+}
+#myModal5 .modal-edit, #myModal6 .modal-picture {
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+				url(images/white.jpg);
+	font-family: Lato, sans-serif;
+	color: rgba(50, 25, 0, 1);
+}
+#myModal5 .modal-edit modal-header h3, #myModal6 .modal-picture modal-header h3 {
+	text-shadow: 2px 2px 3px rgba(155, 155, 155, 0.8);
+}
+#myModal5 .modal-edit .modal-footer button {
+	text-shadow: 2px 2px 3px rgba(155, 155, 155, 0.8);
+}
+
+
 .left-panel {
 	float: left;
 	width: 13%;

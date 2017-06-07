@@ -384,9 +384,6 @@
 				}
 				elseif($event == "avalanches") {
 					
-					$node = $doc->createElement("th", $row['MOUNTAINS']);
-					$tr->appendChild($node);
-					
 					$node = $doc->createElement("th", $row['CONTINENT']);
 					$tr->appendChild($node);
 					
@@ -394,6 +391,9 @@
 					$tr->appendChild($node);
 					
 					$node = $doc->createElement("th", $row['LOCATION']);
+					$tr->appendChild($node);
+					
+					$node = $doc->createElement("th", $row['MOUNTAINS']);
 					$tr->appendChild($node);
 				}
 				

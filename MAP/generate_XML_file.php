@@ -23,7 +23,7 @@ $parnode = $dom->appendChild($node);
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
   }
 
-  $stid = oci_parse($conn, 'SELECT * FROM ( SELECT * FROM AVALANCHES ORDER BY EVENT_DATE ASC ) WHERE ROWNUM <= 5');
+  $stid = oci_parse($conn, 'SELECT * FROM AVALANCHES ORDER BY EVENT_DATE DESC');
   oci_execute($stid);
 
   header("Content-type: text/xml");
@@ -45,7 +45,7 @@ $parnode = $dom->appendChild($node);
     $newnode->setAttribute("EVENTTYPE", $row['EVENTTYPE']);
   }
 
-  $stid = oci_parse($conn, 'SELECT * FROM ( SELECT * FROM EARTHQUAKES ORDER BY EVENT_DATE ASC ) WHERE ROWNUM <= 5');
+  $stid = oci_parse($conn, 'SELECT * FROM EARTHQUAKES ORDER BY EVENT_DATE DESC');
   oci_execute($stid);
 
   header("Content-type: text/xml");
@@ -69,7 +69,7 @@ $parnode = $dom->appendChild($node);
     $newnode->setAttribute("EVENTTYPE", $row['EVENTTYPE']);
   }
 
-  $stid = oci_parse($conn, 'SELECT * FROM ( SELECT * FROM ERUPTIONS ORDER BY EVENT_DATE ASC ) WHERE ROWNUM <= 5');
+  $stid = oci_parse($conn, 'SELECT * FROM ERUPTIONS ORDER BY EVENT_DATE DESC');
   oci_execute($stid);
 
   header("Content-type: text/xml");
@@ -93,7 +93,7 @@ $parnode = $dom->appendChild($node);
     $newnode->setAttribute("EVENTTYPE", $row['EVENTTYPE']);
   }
   
-  $stid = oci_parse($conn, 'SELECT * FROM ( SELECT * FROM fires ORDER BY EVENT_DATE ASC ) WHERE ROWNUM <= 5');
+  $stid = oci_parse($conn, 'SELECT * FROM fires ORDER BY EVENT_DATE DESC');
   oci_execute($stid);
 
   header("Content-type: text/xml");
@@ -115,7 +115,7 @@ $parnode = $dom->appendChild($node);
     $newnode->setAttribute("EVENTTYPE", $row['EVENTTYPE']);
   }
 
-  $stid = oci_parse($conn, 'SELECT * FROM ( SELECT * FROM FLOODS ORDER BY EVENT_DATE ASC ) WHERE ROWNUM <= 5');
+  $stid = oci_parse($conn, 'SELECT * FROM FLOODS ORDER BY EVENT_DATE DESC');
   oci_execute($stid);
 
   header("Content-type: text/xml");
@@ -137,7 +137,7 @@ $parnode = $dom->appendChild($node);
     $newnode->setAttribute("EVENTTYPE", $row['EVENTTYPE']);
   }
 
-  $stid = oci_parse($conn, 'SELECT * FROM ( SELECT * FROM TSHUNAMIS ORDER BY EVENT_DATE ASC ) WHERE ROWNUM <= 5');
+  $stid = oci_parse($conn, 'SELECT * FROM TSHUNAMIS ORDER BY EVENT_DATE DESC');
   oci_execute($stid);
 
   header("Content-type: text/xml");
