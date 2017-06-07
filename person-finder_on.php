@@ -41,7 +41,7 @@
 			<li class="nav-items"> <a href="map_on.php">Map</a> </li>
 			<li class="nav-items"> <a href="person-finder_on.php">Person Finder</a> </li>
 			<li class="nav-items"> <a href="fushion-tables_on.php">Fushion Tables</a> </li>
-			<li class="nav-items"> <a href="transmit-alerts.php">Transmit Alerts</a> </li>
+			<li class="nav-items"> <a href="transmit-alerts_on.php">Transmit Alerts</a> </li>
 			<li class="nav-items"> <a href="contact_on.php">Contact</a> </li>
 			<li class="nav-items"> <a href="profile.php">Profile</a> </li>
 			<li class="nav-items"> <a href="logout.php">Logout</a> </li>

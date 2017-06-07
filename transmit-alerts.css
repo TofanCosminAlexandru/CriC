@@ -6,9 +6,12 @@ html {
 body{
     background: url(images/background2.jpg) no-repeat fixed;
 	font-family: Lato, sans-serif;
-  	display: flex;
+	display: flex;
   	flex-direction: column;
-  	min-height: 100vh;
+   	min-height: 100vh;
+}
+main{
+	flex-grow: 1;
 }
 
 header {
@@ -18,11 +21,6 @@ header {
     overflow: hidden;
     background-color: #222222;
 }
-
-main {
-	flex-grow: 1;
-}
-
 .logo-header {
 	position: absolute;
 	top: -1%;
@@ -138,6 +136,54 @@ body > input[type=checkbox]:checked ~ #menu{
 	}
 }
 
+.wrapper1-title {
+	color: white;
+}
+.wrapper1-header {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	padding-bottom: 0px;
+}
+
+
+#myModal .modal-add, #myModal2 .modal-add {
+	background: rgba(30, 30, 30, 1);
+	font-family: Lato, sans-serif;
+	color: rgba(228, 228, 228, 1);
+}
+#myModal .modal-add h4, #myModal2 .modal-add h4 {
+	text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+}
+#myModal .modal-add  input, #myModal .modal-add textarea, #myModal .modal-add select, #myModal2 .modal-add  input, #myModal2 .modal-add textarea, #myModal2 .modal-add select {
+	background: rgba(30, 30, 30, 1);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#myModal .modal-add button, #myModal2 .modal-add button {
+	font-family: Lato, sans-serif;
+	color: rgba(228, 228, 228, 1);
+	background: rgba(30, 30, 30, 1);
+	border: 1px solid rgba(217, 217, 217, 0.8);
+}
+
+.selected {
+	color: #FE9C45;
+}
+
+.show-info, .wrapper1-header{
+	font-family: Lato, sans-serif;
+	font-size: 25px;
+	text-align: center;
+	min-width: 80px;
+	height: 50px;
+	background-color: #222222;
+	color: rgba(254, 156, 69, 1);
+	margin-bottom: 2%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 .success-msg {
 	color: red;
 	font-size: 24pt;
@@ -154,27 +200,31 @@ body > input[type=checkbox]:checked ~ #menu{
 	margin-right: auto;
 	cursor: pointer;
 }
-.selected {
-	color: #FE9C45;
+
+.add-event {
+	margin-left: 45%;
+	margin-top: -6.8%;
 }
-.wrapper1-title {
-	color: white;
+.update-info {
+	margin-left: 55%;
+	margin-top: -9.4%;
 }
-.wrapper1-header {
-	padding: 15px;
-	padding-bottom: 0px;
+.add-event:hover, .add-event:focus, add-event:active, .show-info:hover, .show-info:focus, show-info:active, .update-info:hover, .update-info:focus, .update-info:active {
+	background-color: rgba(227, 208, 185, 1);
+	color: rgba(254, 156, 69, 1);
 }
-.wrapper1-body {
-	position: relative;
-	padding: 15px;
+#submit-add-event {
+	float: left;
+}
+.earthquake-form, .fire-form, .flood-form, .tshunami-form, .volcano-form, .avalanche-form {
+	border: 2px solid rgb(200, 200, 200);
+	padding-top: 5px;
+}
+#magnitude, #damaged-area, #country, #continent, #volcano-name, #volcano-type, #VEI, #depth, #mountains, #area {
+	margin-left: 5px;
 }
 
-#disaster {
-	width: 15%;
-	min-width: 120px;
-	font-size: 1.7rem;
 
-}
 .table {
 	overflow-x:auto;
 	background-color: rgba(210,130,240, 0.3) !important;
@@ -217,22 +267,34 @@ tbody {
 	font-size: 1.2rem;
 	font-style: italic;
 }
-.cutremur tr:nth-child(1) th {
+tfoot tr:nth-child(1) {
+	background-color: rgba(235, 235, 235, 0.9);
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+tfoot tr:nth-child(2) td {
+	background-color: rgba(234, 234, 234, 0.5);
+	font-size: 1rem;
+	font-weight: normal;
+	text-align: left;
+	padding: 7px 1px 7px 1px;
+}
+.Cutremur thead tr:nth-child(1) th {
 	background-color: rgba(203, 245, 216, 0.9);
 }
-.incendiu thead tr:nth-child(1) th {
+.Incendiu thead tr:nth-child(1) th {
 	background-color: rgba(255, 233, 155, 0.9);
 }
-.inundatie thead tr:nth-child(1) th {
+.Inundatie thead tr:nth-child(1) th {
 	background-color: rgba(168, 228, 255, 0.9);
 }
-.tshunami thead tr:nth-child(1) th {
+.Tshunami thead tr:nth-child(1) th {
 	background-color: rgba(130, 130, 255, 0.9);
 }
-.vulcan thead tr:nth-child(1) th {
+.Vulcan thead tr:nth-child(1) th {
 	background-color: rgba(250, 180, 182, 0.9);
 }
-.avalansa thead tr:nth-child(1) th {
+.Avalansa thead tr:nth-child(1) th {
 	background-color: rgba(203, 194, 233, 0.9);
 }
 
