@@ -51,8 +51,8 @@
 <div id="sidebar">
   <ul>
     <li><img src="./images/logo.png" width=120 height=120></li>
-    <li><a href="person-finder_on.html">Test</a></li>
-    <li><a href="about_on.html">About</a></li>
+    <li><a href="person-finder_on.php">Test</a></li>
+    <li><a href="about_on.php">About</a></li>
     <li><a href="#">Other</a></li>
     <li><a href="#">Tables</a></li>
 
@@ -86,12 +86,12 @@
   <div class= "row">
   <div class="action-outer start">
   <div class="action-inner">
-  	<a href="search.html"> I'm looking for someone</a>
+  	<a href="search_on.php"> I'm looking for someone</a>
   </div>
   </div>
   <div class="action-outer end">
   <div class="action-inner">
-  	<a href="form.html"> I have information about someone </a>
+  	<a href="form_on.php"> I have information about someone </a>
   </div>
   </div>
   </div>

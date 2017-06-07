@@ -15,11 +15,13 @@
 		echo 'Conectare nereusita!';
 	}
 	
+	// cream documentul DOM corespunzator fisierului HTML
 	libxml_use_internal_errors(true);
-	$doc = new DOMDocument('1.0', 'utf-8'); // cream documentul DOM corespunzator fisierului HTML
+	$doc = new DOMDocument('1.0', 'utf-8');
 	$doc->validateOnParse = true;
 	$doc->loadHTMLFile('fushion-tables_on.php');
 
+	// afisam cele mai recente 5 evenimente de fiecare tip
 	display_recent_events("earthquakes", $connection, $doc);
 	display_recent_events("fires", $connection, $doc);
 	display_recent_events("floods", $connection, $doc);
@@ -61,9 +63,9 @@
 		}
 		else {
 			
-			while (($row = oci_fetch_array($parsed_query, OCI_ASSOC)) != false) {
+			while (($row = oci_fetch_array($parsed_query, OCI_ASSOC)) != false) { // parcurgand linie cu linie
 				
-				// adaugam elementele care vor constitui o linie din tabela
+				// cream si adaugam elementele care impreuna vor constitui o linie din tabela
 				$body = $doc->getElementById($event . "_tbody");
 				$tr = $doc->createElement("tr");
 				

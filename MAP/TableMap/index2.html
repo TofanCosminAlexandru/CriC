@@ -4,7 +4,6 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <title>Using MySQL and PHP with Google Maps</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -24,51 +23,37 @@
   <body>
     <div id="map"></div>
 
-    <script>
+  <script>
     var loc = window.location.toString();
+    console.log(loc);
     params = loc.split('?');
-    params2 = params[1].split('&');
-    adresa = params2[0].split('=')[1];
-    nume = params2[1].split('=')[1];
-    prenume = params2[2].split('=')[1];
-    numar = params2[3].split('=')[1];
+    console.log(params[1]);
 
 
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: new google.maps.LatLng(getCoordonatesLat(params2[0].split('=')[1]).responseText, getCoordonatesLng(params2[0].split('=')[1]).responseText),
-                zoom: 4
+                center: new google.maps.LatLng(getCoordonatesLat(params[1].split('=')[1]).responseText, getCoordonatesLng(params[1].split('=')[1]).responseText),
+                zoom: 15
             });
 
             var infoWindow = new google.maps.InfoWindow;
-            var lat = getCoordonatesLat(adresa);
-            var lng = getCoordonatesLng(adresa);
+            var lat = getCoordonatesLat(params[1].split('=')[1]);
+            var lng = getCoordonatesLng(params[1].split('=')[1]);
 
             var point = new google.maps.LatLng(lat.responseText,lng.responseText);
-
-            var message = "<div>"+"<strong>First name: </strong>"+nume+"<br>"+"<strong>Last name: </strong>"+prenume+"<br>"+
-                           "<strong>Phone number: </strong>"+numar+"</div>";
+            console.log(lat.responseText+" "+lng.responseText);
                 
-            var image = "../PersonFinderMap/mapIcons/avalanche.png";
+            var image = "../TableMap/mapIcons/avalanche.png";
             var marker = new google.maps.Marker({
                 map: map,
                 position: point,
                 icon: image
             });
-
-            var infowindow = new google.maps.InfoWindow({
-                content: message
-            });
-
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.open(map, marker);
-            });
-  
         };
 
         function getCoordonatesLat (location) {
           return $.ajax({
-            url:"../PersonFinderMap/getCoordonatesLat.php",
+            url:"../TableMap/getCoordonatesLat.php",
             type: "post", //request type,
             data: {location: location},
             async:    false,
@@ -80,7 +65,7 @@
 
         function getCoordonatesLng (location) {
           return $.ajax({
-            url:"../PersonFinderMap/getCoordonatesLng.php",
+            url:"../TableMap/getCoordonatesLng.php",
             type: "post", //request type,
             data: {location: location},
             async:    false,

@@ -15,6 +15,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="event.js"></script>
+	<script src="eventLocation_on.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="fushion-tables_on.css">
@@ -24,6 +25,7 @@
     
 	<header>
 		<h3 class="header-title" >Crisis Containment Service</h3>
+		
 	</header>
 	
 	  <label for="show-menu" class="show-menu">Meniu</label>
@@ -437,7 +439,22 @@
 			</table>
 		</div>
 	</main>
-	
+
+	<div class="modal fade" id="myModal3" role="dialog">
+			<div class="modal-dialog" class="modal-dialog modal-lg">
+				<div class="modal-content">
+				
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Location</h4>
+					</div>
+							
+					<div class="modal-body">
+						<p id="test"></p>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 	<footer>
 		<div class="footer">

@@ -271,7 +271,7 @@
 								</div>
 							
 								<div>
-									<button type="button" class="btn btn-danger btn-lg" id="alert-btn"">ALERT!</button>
+									<button type="button" class="btn btn-danger btn-lg" id="alert-btn">ALERT!</button>
 								</div>
 							</div>
 						</form>

@@ -29,7 +29,7 @@ $(document).ready(function() {
 					if(date1[0] == date2[2] && ((date1[1] == "JAN" && date2[1] == "01") || (date1[1] == "FEB" && date2[1] == "02") || (date1[1] == "MAR" && date2[1] == "03") ||
 						(date1[1] == "APR" && date2[1] == "04") || (date1[1] == "MAY" && date2[1] == "05") || (date1[1] == "JUN" && date2[1] == "06") || (date1[1] == "JUL" && date2[1] == "07") ||
 						(date1[1] == "AUG" && date2[1] == "08") || (date1[1] == "SEP" && date2[1] == "09") || (date1[1] == "OCT" && date2[1] == "10") || (date1[1] == "NOV" && date2[1] == "11") ||
-						(date1[1] == "DEC" && date2[1] == "12")) && date1[2] == date2[0].slice(2, 4)) {
+						(date1[1] == "DEC" && date2[1] == "12")) && date1[2] == date2[0].slice(2, 4)) { // acele elemente ale caror data coincide cu data din formular
 						
 						var eventType = markerElem.getAttribute('EVENTTYPE');
 						var location = markerElem.getAttribute('LOCATION');

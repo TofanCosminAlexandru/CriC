@@ -75,27 +75,11 @@
 	</div>
 	
 	<main>	
-		<div class="filter">
-			<div>
-				<select name="event-type" form="event-type">
-					<option value="incendiu">Incendiu</option>
-					<option value="inundatie">Inundatie</option>
-					<option value="cutremur">Cutremur</option>
-					<option value="tsunami">Tsunami</option>
-					<option value="vulcan">Vulcan</option>
-					<option value="avalansa">Avalansa</option>
-				</select>
-			</div>
-			
-			<div>
-				<input type="datetime-local" name="type_date" id="date">
-			</div>
-		</div>
-		<script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3"></script>
-		<div class="googft-mapCanvas" id="googft-mapCanvas"></div>
-		<script type="text/javascript" src="map.js"></script>
+	
 	</main>
 	
+	<iframe src="../CriC/MAP/index2.html" width="100%" height="455" id = "map" ></iframe>
+
 	<footer>
 		<div class="footer">
 		<img class="logo-footer" src="images/logo.png" alt="Cric">

@@ -34,6 +34,10 @@
 			$_SESSION['grade'] = $row['GRADE'];
 			$_SESSION['section'] = $row['SECTION'];
 			$_SESSION['profile_picture'] = $row['PROFILE_PICTURE'];
+
+			$cookie_name = "user_last_name";
+			$cookie_value = $row[1];
+			setcookie($cookie_name, $cookie_value);
            
 			header("Location: home_on.php");
 		}

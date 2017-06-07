@@ -23,7 +23,7 @@
 	$disappeared = $_REQUEST["type_disappeared"];
 	$deaths = $_REQUEST["type_deaths"];
 	
-	if($safe_date != null){
+	if($safe_date != null) {
 		// updatare safe_date in baza de date
 		if($event == "Cutremur") {
 			$query = 'update earthquakes set safe_date = to_date(:safe_date, \'yyyy-mm-dd hh24:mi\') where id = :id';
@@ -56,7 +56,7 @@
 			echo $list[1];
 		}
 	}
-	if($evacuated != null){
+	if($evacuated != null) {
 		// updatare evacuated in baza de date
 		if($event == "Cutremur") {
 			$query = 'update earthquakes set evacuated = :evacuated where id = :id';
@@ -89,7 +89,7 @@
 			echo $list[1];
 		}
 	}
-	if($disappeared != null){
+	if($disappeared != null) {
 		// updatare disappeared in baza de date
 		if($event == "Cutremur") {
 			$query = 'update earthquakes set disappeared = :disappeared where id = :id';
@@ -122,7 +122,7 @@
 			echo $list[1];
 		}
 	}
-	if($deaths != null){
+	if($deaths != null) {
 		// updatare deaths in baza de date
 		if($event == "Cutremur") {
 			$query = 'update earthquakes set deaths = :deaths where id = :id';
