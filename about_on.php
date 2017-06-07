@@ -30,6 +30,7 @@
 	
 	<div class="menu" id="menu">
 		<ul class="menu-list">
+<<<<<<< HEAD:about_on.php
 			<li class="nav-items"> <a href="home_on.php">Home</a> </li>
 			<li class="nav-items"> <a href="map_on.php">Map</a> </li>
 			<li class="nav-items"> <a href="person-finder_on.php">Person Finder</a> </li>
@@ -38,6 +39,16 @@
 			<li class="nav-items"> <a href="contact_on.php">Contact</a> </li>
 			<li class="nav-items"> <a href="profile.php">Profile</a> </li>
 			<li class="nav-items"> <a href="index.php">Logout</a> </li>
+=======
+			<li class="nav-items"> <a href="home_on.html">Home</a> </li>
+			<li class="nav-items"> <a href="map_on.html">Map</a> </li>
+			<li class="nav-items"> <a href="person-finder_on.html">Person Finder</a> </li>
+			<li class="nav-items"> <a href="fushion-tables_on.html">Fushion Tables</a> </li>
+			<li class="nav-items"> <a href="transmit-alerts_on.html">Transmit Alerts</a> </li>
+			<li class="nav-items"> <a href="contact_on.html">Contact</a> </li>
+			<li class="nav-items"> <a href="profile.html">Profile</a> </li>
+			<li class="nav-items"> <a href="logout.php">Logout</a> </li>
+>>>>>>> cfc06b7b41aea340338914b2a952a01acbbd1ce6:about_on.html
 		</ul>
 	</div>
   
