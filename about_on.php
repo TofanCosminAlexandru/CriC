@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +22,7 @@
 	<header>
 		<img class="logo-header" src="./images/text_logo.png" alt="Cric">
 		<h3 class="header-title" >Crisis Containment Service</h3>
+		<h4 style="text-align: right; color:#FE9C45; padding: 10px;"> <?php echo '<b>Welcome, </b>'.$_SESSION['first_name'].' '.$_SESSION['last_name']?></h4>
 	</header>
   
   <label for="show-menu" class="show-menu">Meniu</label>
@@ -26,13 +30,13 @@
 	
 	<div class="menu" id="menu">
 		<ul class="menu-list">
-			<li class="nav-items"> <a href="home_on.html">Home</a> </li>
-			<li class="nav-items"> <a href="map_on.html">Map</a> </li>
-			<li class="nav-items"> <a href="person-finder_on.html">Person Finder</a> </li>
-			<li class="nav-items"> <a href="fushion-tables_on.html">Fushion Tables</a> </li>
-			<li class="nav-items"> <a href="transmit-alerts_on.html">Transmit Alerts</a> </li>
-			<li class="nav-items"> <a href="contact_on.html">Contact</a> </li>
-			<li class="nav-items"> <a href="profile.html">Profile</a> </li>
+			<li class="nav-items"> <a href="home_on.php">Home</a> </li>
+			<li class="nav-items"> <a href="map_on.php">Map</a> </li>
+			<li class="nav-items"> <a href="person-finder_on.php">Person Finder</a> </li>
+			<li class="nav-items"> <a href="fushion-tables_on.php">Fushion Tables</a> </li>
+			<li class="nav-items"> <a href="transmit-alerts_on.php">Transmit Alerts</a> </li>
+			<li class="nav-items"> <a href="contact_on.php">Contact</a> </li>
+			<li class="nav-items"> <a href="profile.php">Profile</a> </li>
 			<li class="nav-items"> <a href="index.php">Logout</a> </li>
 		</ul>
 	</div>
@@ -41,8 +45,8 @@
 <div id="sidebar">
 	<ul>
 		<li><img src="./images/logo.png" width=120 height=120></li>
-		<li><a href="person-finder_on.html">Test</a></li>
-		<li><a href="about_on.html">About</a></li>
+		<li><a href="person-finder_on.php">Test</a></li>
+		<li><a href="about_on.php">About</a></li>
 		<li><a href="#">Other</a></li>
 		<li><a href="#">Tables</a></li>
 	</ul>
