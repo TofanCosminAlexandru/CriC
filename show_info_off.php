@@ -19,11 +19,8 @@
 	libxml_use_internal_errors(true);
 	$doc = new DOMDocument('1.0', 'utf-8');
 	$doc->validateOnParse = true;
-<<<<<<< HEAD
 	$doc->loadHTMLFile('fushion-tables.html');
-=======
 	$doc->loadHTMLFile('../CriC/fushion-tables.html');
->>>>>>> b0e731e07c3e275549995be0b9d06f674006849f
 
 	// afisam cele mai recente 5 evenimente de fiecare tip
 	display_recent_events("earthquakes", $connection, $doc);
