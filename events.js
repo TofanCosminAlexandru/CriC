@@ -4,7 +4,6 @@ $(document).ready(function() {
 		$("tbody .selected").removeClass("selected");
 		$(this).addClass('selected');
 		var id = $(this).children().eq(0).text();
-		//var type = $(this).parent().parent("thead tr th:first").html();
 		var type = $(this).parent().parent().attr("class");
 		$('.hidden-id').val(id);
 		$('.hidden-type').val(type);

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<humans>
+  <human>
+    <name>Tofan Cosmin</name>
+    <email>tofan_cosmin@yahoo.com</email>
+    <phone>+40744887339</phone>
+    <location>Sicilia, Castel di Tusa</location>
+    <country>Italia</country>
+    <continent>Europa</continent>
+  </human>
+  <human>
+    <name>Mihalache Bogdan</name>
+    <email>b_mihalachi@yahoo.com</email>
+    <phone>+40727855271</phone>
+    <location>Sakarya, Karasu</location>
+    <country>Turcia</country>
+    <continent>Asia</continent>
+  </human>
+  <human>
+    <name>Alexandru Gabriel</name>
+    <email>alexandru.gabriel@outlook.com</email>
+    <phone>+40755533313</phone>
+    <location>Vaslui</location>
+    <country>Romania</country>
+    <continent>Europa</continent>
+  </human>
+   <human>
+    <name>Alexandru Gabriel</name>
+    <email>alexandru.gabriel009@gmail.com</email>
+    <phone>+40755533313</phone>
+    <location>Sakarya, Karasu</location>
+    <country>Turcia</country>
+    <continent>Asia</continent>
+  </human>
+</humans>

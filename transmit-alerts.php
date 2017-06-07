@@ -245,27 +245,12 @@
 											<input type="checkbox" name="alert-email" value="email"> E-Mail
 										</label>
 									</div>
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="alert-sound" value="sound"> Alarma sonora publica
-										</label>
-									</div>
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="alert-tv" value="tv"> Televiziune
-										</label>
-									</div>
 								</div>
 								<div class="alert-area">
 									<h4 class="alert-title">Selectati raza de alertare</h4>
 									<div class="radio">
 										<label>
 											<input type="radio" name="alert-area" value="Local"> Local
-										</label>
-									</div>
-									<div class="radio">
-										<label>
-											<input type="radio" name="alert-area" value="Regional"> Regional
 										</label>
 									</div>
 									<div class="radio">
