@@ -147,7 +147,7 @@
 
  
   
-  define ('IMGDIR', 'C:\\xampp\\htdocs\\RepoCriC\\CriC\\images\\'); // numele directorului cu imagini
+  define ('IMGDIR', 'C:\\Apache24\\htdocs\\GITHub-Proiect-TW-CriC\\CriC\\images\\'); // numele directorului cu imagini
 
     // prevenim transferuri periculoase
     if (!isset($_FILES['img']['error']) || is_array($_FILES['img']['error'])) {
