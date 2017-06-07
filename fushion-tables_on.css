@@ -150,6 +150,9 @@ input[type=checkbox]:checked ~ #menu{
 	border: 1px solid rgba(217, 217, 217, 0.8);
 }
 
+.selected {
+	color: #FE9C45;
+}
 
 .add-event, .show-info, .update-info {
 	font-family: Lato, sans-serif;
@@ -219,6 +222,7 @@ th {
 }
 td {
 	text-align: center;
+	cursor: pointer;
 }
 tbody tr:nth-child(even) td {
 	background-color: rgba(250, 250, 250, 0.9);
