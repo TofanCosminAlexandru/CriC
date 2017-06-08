@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	define ('IMGDIR', 'C:\\Apache24\\htdocs\\GITHub-Proiect-TW-CriC\\CriC\\images\\'); // numele directorului cu imagini
+	define ('IMGDIR', 'C:\\Apache24\\htdocs\\Update gabi\\CriC\\images\\'); // numele directorului cu imagini
 
 	try {
 		

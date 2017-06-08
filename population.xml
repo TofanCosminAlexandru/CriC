@@ -32,4 +32,12 @@
     <country>Turcia</country>
     <continent>Asia</continent>
   </human>
+    <human>
+    <name>Leleu Alexandru</name>
+    <email>leleualexandru@yahoo.ro</email>
+    <phone>+40748507221</phone>
+    <location>Iasi</location>
+    <country>Romania</country>
+    <continent>Europa</continent>
+  </human>
 </humans>
